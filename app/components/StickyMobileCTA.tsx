@@ -1,0 +1,37 @@
+import site from '../data/site.json';
+import AppLink from './AppLink';
+import Icon from './Icon';
+
+const whatsappHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(
+  'Hi, I would like to book an astrology consultation.',
+)}`;
+
+export default function StickyMobileCTA() {
+  return (
+    <>
+      <div
+        className="fixed inset-x-0 bottom-0 z-40 flex border-t border-neutral-200 bg-surface shadow-[0_-4px_16px_rgb(0_0_0_/_0.08)] lg:hidden"
+        aria-label="Quick contact"
+      >
+        <AppLink
+          href={site.phoneHref}
+          className="flex flex-1 items-center justify-center gap-2 py-3 text-sm font-semibold text-neutral-800 active:bg-neutral-100"
+        >
+          <Icon name="Phone" size={18} className="text-accent-600" />
+          Call Now
+        </AppLink>
+        <div className="w-px bg-neutral-200" />
+        <AppLink
+          href={whatsappHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex flex-1 items-center justify-center gap-2 py-3 text-sm font-semibold text-white bg-green-600 active:bg-green-700"
+        >
+          <Icon name="MessageCircle" size={18} />
+          WhatsApp
+        </AppLink>
+      </div>
+      <div className="h-14 lg:hidden" aria-hidden="true" />
+    </>
+  );
+}

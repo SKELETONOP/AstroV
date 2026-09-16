@@ -1,0 +1,115 @@
+import type { MetaFunction } from 'react-router';
+import Button from '../components/Button';
+import FaqAccordion from '../components/FaqAccordion';
+import { buildMeta } from '../lib/meta';
+
+export const meta: MetaFunction = ({ location }) =>
+  buildMeta({
+    title: 'Frequently Asked Questions',
+    description: 'Answers to common questions about astrology consultations, remedies, privacy and availability at Astro Vikesh Kumar.',
+    pathname: location.pathname,
+  });
+
+const faqGroups = [
+  {
+    title: 'Consultations',
+    items: [
+      {
+        question: 'How does an online consultation work?',
+        answer:
+          'You share your birth details in advance through the contact form or WhatsApp. We then connect at your scheduled time over phone or video call, and you receive clear guidance along with any recommended remedy.',
+      },
+      {
+        question: 'How long does a consultation take?',
+        answer:
+          'Most consultations run between 30 and 45 minutes, depending on how many questions you bring. Follow-up questions after the session are welcomed at no extra charge.',
+      },
+      {
+        question: 'Can I book an in-person consultation in Delhi?',
+        answer:
+          'Yes. In-person consultations are available at the Karol Bagh office in New Delhi by appointment. Use the contact form to arrange a time.',
+      },
+    ],
+  },
+  {
+    title: 'Remedies & Results',
+    items: [
+      {
+        question: 'How soon can I expect results from a remedy?',
+        answer:
+          'This varies by situation and by the specific remedy prescribed. Most clients notice a shift within a few weeks of consistent practice. A realistic timeline is always shared during your consultation.',
+      },
+      {
+        question: 'Are remedies safe to combine with other practices?',
+        answer:
+          'Yes, the remedies suggested are simple and traditional, and generally work well alongside personal, religious or medical practices you already follow. Always mention any existing medical treatment during your consultation.',
+      },
+    ],
+  },
+  {
+    title: 'Privacy & Trust',
+    items: [
+      {
+        question: 'Is my information kept confidential?',
+        answer:
+          'Yes. Everything you share, including birth details and personal circumstances, is kept strictly confidential and is never shared with third parties.',
+      },
+      {
+        question: 'Do you guarantee specific outcomes?',
+        answer:
+          'No responsible practitioner can guarantee a specific outcome. What is offered is honest guidance and remedies grounded in traditional practice, with realistic expectations set from the start.',
+      },
+    ],
+  },
+  {
+    title: 'Reach & Availability',
+    items: [
+      {
+        question: 'Do you offer consultations outside India?',
+        answer:
+          'Yes, consultations are available worldwide over phone, WhatsApp and video call, including for clients across the UK, Canada, Australia, the Gulf and Singapore.',
+      },
+      {
+        question: 'What are your consultation hours?',
+        answer:
+          'Consultations are generally available daily from 8:00 AM to 9:00 PM IST. For clients in significantly different time zones, a suitable time can usually be arranged.',
+      },
+    ],
+  },
+];
+
+export default function Faq() {
+  return (
+    <>
+      <section className="border-b border-neutral-200 bg-neutral-50 py-12 lg:py-16">
+        <div className="container-page">
+          <h1 className="text-3xl font-extrabold text-neutral-900 sm:text-4xl">Frequently Asked Questions</h1>
+          <p className="mt-4 max-w-2xl text-lg leading-7 text-neutral-600">
+            Everything you need to know before booking a consultation. Can&apos;t find your answer? Reach out
+            directly.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-12 lg:py-16">
+        <div className="container-page max-w-3xl space-y-10">
+          {faqGroups.map((group, gi) => (
+            <div key={group.title}>
+              <h2 className="mb-4 text-xl font-semibold text-neutral-900">{group.title}</h2>
+              <FaqAccordion items={group.items} idPrefix={`faq-${gi}`} />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-t border-neutral-200 bg-accent-50 py-12">
+        <div className="container-page flex flex-col items-center gap-4 text-center">
+          <h2 className="text-2xl font-bold text-neutral-900">Still have a question?</h2>
+          <Button href="/contact" variant="primary" size="lg">
+            Contact Us
+          </Button>
+        </div>
+      </section>
+    </>
+  );
+}
