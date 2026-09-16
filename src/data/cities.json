@@ -1,0 +1,12 @@
+[
+  { "name": "Delhi", "slug": "delhi", "country": "India" },
+  { "name": "Mumbai", "slug": "mumbai", "country": "India" },
+  { "name": "Jaipur", "slug": "jaipur", "country": "India" },
+  { "name": "Bengaluru", "slug": "bengaluru", "country": "India" },
+  { "name": "Dubai", "slug": "dubai", "country": "UAE" },
+  { "name": "London", "slug": "london", "country": "United Kingdom" },
+  { "name": "Toronto", "slug": "toronto", "country": "Canada" },
+  { "name": "Sydney", "slug": "sydney", "country": "Australia" },
+  { "name": "Singapore", "slug": "singapore", "country": "Singapore" },
+  { "name": "New York", "slug": "new-york", "country": "United States" }
+]

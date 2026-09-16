@@ -1,0 +1,68 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  ariaLabel: string;
+  class?: string;
+}
+
+const { ariaLabel, class: className = '' } = Astro.props;
+---
+
+<div class={`relative ${className}`} data-carousel>
+  <div
+    class="scrollbar-none flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2"
+    style="scrollbar-width: none;"
+    role="region"
+    aria-label={ariaLabel}
+    data-carousel-track
+  >
+    <slot />
+  </div>
+  <div class="mt-6 flex items-center justify-center gap-3">
+    <button
+      type="button"
+      class="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-300 text-neutral-600 hover:border-accent-600 hover:text-accent-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-600"
+      aria-label="Previous"
+      data-carousel-prev
+    >
+      <Icon name="ChevronLeft" size={18} />
+    </button>
+    <button
+      type="button"
+      class="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-300 text-neutral-600 hover:border-accent-600 hover:text-accent-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-600"
+      aria-label="Next"
+      data-carousel-next
+    >
+      <Icon name="ChevronRight" size={18} />
+    </button>
+  </div>
+</div>
+
+<style>
+  [data-carousel-track]::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+
+<script>
+  function setupCarousels() {
+    document.querySelectorAll<HTMLElement>('[data-carousel]').forEach((carousel) => {
+      const track = carousel.querySelector<HTMLElement>('[data-carousel-track]');
+      const prev = carousel.querySelector<HTMLButtonElement>('[data-carousel-prev]');
+      const next = carousel.querySelector<HTMLButtonElement>('[data-carousel-next]');
+      if (!track || !prev || !next) return;
+
+      const scrollByCard = (direction: 1 | -1) => {
+        const firstChild = track.firstElementChild as HTMLElement | null;
+        const amount = (firstChild?.getBoundingClientRect().width ?? 300) + 24;
+        track.scrollBy({ left: amount * direction, behavior: 'smooth' });
+      };
+
+      prev.addEventListener('click', () => scrollByCard(-1));
+      next.addEventListener('click', () => scrollByCard(1));
+    });
+  }
+
+  setupCarousels();
+</script>

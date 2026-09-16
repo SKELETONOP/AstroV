@@ -1,0 +1,233 @@
+---
+import Icon from './Icon.astro';
+import Button from './Button.astro';
+import LogoMark from './LogoMark.astro';
+import servicesData from '../data/services.json';
+import site from '../data/site.json';
+
+const { categories } = servicesData;
+
+const navLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'Contact', href: '/contact' },
+];
+---
+
+<header class="sticky top-0 z-50 border-b border-neutral-200 bg-neutral-50/95 backdrop-blur-sm">
+  <div class="container-page flex h-16 items-center justify-between gap-4 lg:h-20">
+    <a href="/" class="flex items-center gap-2 font-display text-lg font-bold text-neutral-900 lg:text-xl">
+      <LogoMark size={40} class="h-9 w-9 lg:h-10 lg:w-10" />
+      <span class="leading-tight">
+        Astro Vikesh Kumar
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-1 lg:flex" aria-label="Primary">
+      <a href="/" class="rounded-md px-3 py-2 text-sm font-medium text-neutral-700 hover:bg-neutral-100 hover:text-neutral-900">Home</a>
+
+      <div class="relative" data-mega-menu>
+        <button
+          type="button"
+          class="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-neutral-700 hover:bg-neutral-100 hover:text-neutral-900"
+          aria-expanded="false"
+          aria-controls="services-mega-panel"
+          data-mega-trigger
+        >
+          Services
+          <Icon name="ChevronDown" size={16} class="transition-transform" data-mega-chevron />
+        </button>
+        <div
+          id="services-mega-panel"
+          role="region"
+          aria-label="Services menu"
+          class="absolute left-1/2 top-full z-50 hidden w-[min(90vw,780px)] -translate-x-1/2 pt-3"
+          data-mega-panel
+        >
+          <div class="grid grid-cols-3 gap-6 rounded-xl border border-neutral-200 bg-surface p-6 shadow-card">
+            {categories.map((cat: any) => (
+              <div>
+                <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-accent-700">{cat.name}</p>
+                <ul class="space-y-2">
+                  {cat.items.map((item: any) => (
+                    <li>
+                      <a
+                        href={`/services/${item.slug}`}
+                        class="flex items-start gap-2 rounded-md p-1.5 text-sm text-neutral-700 hover:bg-accent-50 hover:text-accent-700"
+                      >
+                        <Icon name={item.icon} size={16} class="mt-0.5 shrink-0 text-accent-600" />
+                        <span>{item.title}</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {navLinks.slice(1).map((link) => (
+        <a href={link.href} class="rounded-md px-3 py-2 text-sm font-medium text-neutral-700 hover:bg-neutral-100 hover:text-neutral-900">
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="hidden items-center gap-4 lg:flex">
+      <a href={site.phoneHref} class="flex items-center gap-2 text-sm font-semibold text-neutral-800 hover:text-accent-700">
+        <Icon name="Phone" size={18} class="text-accent-600" />
+        {site.phone}
+      </a>
+      <Button href="/contact" variant="primary" size="md">Consult Online</Button>
+    </div>
+
+    <button
+      type="button"
+      class="flex h-10 w-10 items-center justify-center rounded-md text-neutral-800 hover:bg-neutral-100 lg:hidden"
+      aria-expanded="false"
+      aria-controls="mobile-nav-panel"
+      data-mobile-trigger
+    >
+      <span class="sr-only">Open menu</span>
+      <Icon name="Menu" size={24} data-icon-open />
+      <Icon name="X" size={24} class="hidden" data-icon-close />
+    </button>
+  </div>
+</header>
+
+<!--
+  These two are deliberately siblings of <header>, not children of it.
+  The header has `backdrop-blur-sm` (a backdrop-filter), and per the CSS spec an
+  element with a filter/backdrop-filter/transform becomes the containing block for
+  any `position: fixed` descendant — so a fixed drawer nested inside it would be
+  positioned relative to the ~64px-tall header box instead of the viewport, and
+  effectively disappear. Keeping them outside the header avoids that entirely.
+-->
+<div
+  class="fixed inset-0 z-30 bg-black/60 opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out lg:hidden"
+  data-mobile-backdrop
+  aria-hidden="true"
+></div>
+
+<div
+  id="mobile-nav-panel"
+  class="fixed right-0 top-16 bottom-0 z-40 w-[85%] max-w-sm translate-x-full overflow-y-auto border-l border-neutral-200 bg-neutral-50 shadow-card transition-transform duration-300 ease-in-out lg:hidden"
+  data-mobile-panel
+  aria-hidden="true"
+>
+  <div class="flex flex-col gap-1 p-4">
+    <a href="/" class="rounded-md px-3 py-3 text-base font-medium text-neutral-800 hover:bg-neutral-100">Home</a>
+
+    <details class="group rounded-md">
+      <summary class="flex cursor-pointer list-none items-center justify-between rounded-md px-3 py-3 text-base font-medium text-neutral-800 hover:bg-neutral-100">
+        Services
+        <Icon name="ChevronDown" size={18} class="transition-transform group-open:rotate-180" />
+      </summary>
+      <div class="space-y-4 px-3 pb-3 pt-1">
+        {categories.map((cat: any) => (
+          <div>
+            <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-accent-700">{cat.name}</p>
+            <ul class="space-y-1">
+              {cat.items.map((item: any) => (
+                <li>
+                  <a href={`/services/${item.slug}`} class="flex items-center gap-2 rounded-md py-2 text-sm text-neutral-700 hover:text-accent-700">
+                    <Icon name={item.icon} size={16} class="text-accent-600" />
+                    {item.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </details>
+
+    {navLinks.slice(1).map((link) => (
+      <a href={link.href} class="rounded-md px-3 py-3 text-base font-medium text-neutral-800 hover:bg-neutral-100">
+        {link.label}
+      </a>
+    ))}
+
+    <div class="mt-3 flex flex-col gap-3 border-t border-neutral-200 pt-4">
+      <a href={site.phoneHref} class="flex items-center gap-2 text-base font-semibold text-neutral-800">
+        <Icon name="Phone" size={18} class="text-accent-600" />
+        {site.phone}
+      </a>
+      <Button href="/contact" variant="primary" size="md" class="w-full">Consult Online</Button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function setupMegaMenu() {
+    const wrapper = document.querySelector('[data-mega-menu]');
+    if (!wrapper) return;
+    const trigger = wrapper.querySelector('[data-mega-trigger]') as HTMLButtonElement;
+    const panel = wrapper.querySelector('[data-mega-panel]') as HTMLElement;
+    const chevron = wrapper.querySelector('[data-mega-chevron]') as HTMLElement;
+
+    const close = () => {
+      panel.classList.add('hidden');
+      trigger.setAttribute('aria-expanded', 'false');
+      chevron.classList.remove('rotate-180');
+    };
+    const open = () => {
+      panel.classList.remove('hidden');
+      trigger.setAttribute('aria-expanded', 'true');
+      chevron.classList.add('rotate-180');
+    };
+
+    trigger.addEventListener('click', () => {
+      const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+      isOpen ? close() : open();
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!wrapper.contains(e.target as Node)) close();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') close();
+    });
+  }
+
+  function setupMobileMenu() {
+    const trigger = document.querySelector('[data-mobile-trigger]') as HTMLButtonElement;
+    const panel = document.querySelector('[data-mobile-panel]') as HTMLElement;
+    const backdrop = document.querySelector('[data-mobile-backdrop]') as HTMLElement;
+    if (!trigger || !panel || !backdrop) return;
+    const iconOpen = trigger.querySelector('[data-icon-open]') as HTMLElement;
+    const iconClose = trigger.querySelector('[data-icon-close]') as HTMLElement;
+
+    const setOpen = (open: boolean) => {
+      trigger.setAttribute('aria-expanded', String(open));
+      panel.setAttribute('aria-hidden', String(!open));
+      panel.classList.toggle('translate-x-full', !open);
+      panel.classList.toggle('translate-x-0', open);
+      backdrop.classList.toggle('opacity-0', !open);
+      backdrop.classList.toggle('pointer-events-none', !open);
+      backdrop.classList.toggle('opacity-100', open);
+      iconOpen.classList.toggle('hidden', open);
+      iconClose.classList.toggle('hidden', !open);
+      document.body.classList.toggle('overflow-hidden', open);
+    };
+
+    trigger.addEventListener('click', () => {
+      const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+      setOpen(!isOpen);
+    });
+
+    backdrop.addEventListener('click', () => setOpen(false));
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && trigger.getAttribute('aria-expanded') === 'true') {
+        setOpen(false);
+      }
+    });
+  }
+
+  setupMegaMenu();
+  setupMobileMenu();
+</script>

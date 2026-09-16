@@ -1,0 +1,82 @@
+{
+  "categories": [
+    {
+      "name": "Astro",
+      "slug": "astro",
+      "items": [
+        {
+          "title": "Astrology Consultation",
+          "slug": "astrology-consultation",
+          "icon": "Compass",
+          "summary": "Birth chart analysis and personalised guidance on career, health and life direction."
+        }
+      ]
+    },
+    {
+      "name": "Vashikaran",
+      "slug": "vashikaran",
+      "items": [
+        {
+          "title": "Vashikaran Specialist",
+          "slug": "vashikaran-specialist",
+          "icon": "Sparkle",
+          "summary": "Ethical vashikaran remedies to resolve relationship and life obstacles."
+        }
+      ]
+    },
+    {
+      "name": "Black Magic",
+      "slug": "black-magic",
+      "items": [
+        {
+          "title": "Black Magic Removal",
+          "slug": "black-magic-removal",
+          "icon": "ShieldCheck",
+          "summary": "Protective remedies to identify and remove negative energy affecting your life."
+        }
+      ]
+    },
+    {
+      "name": "Love",
+      "slug": "love",
+      "items": [
+        {
+          "title": "Love Problem Solution",
+          "slug": "love-problem-solution",
+          "icon": "Heart",
+          "summary": "Guidance to resolve misunderstandings and strengthen a loving relationship."
+        },
+        {
+          "title": "Inter-Caste Love Marriage",
+          "slug": "inter-caste-love-marriage",
+          "icon": "HeartHandshake",
+          "summary": "Support in convincing family and easing approval for inter-caste marriage."
+        }
+      ]
+    },
+    {
+      "name": "Family",
+      "slug": "family",
+      "items": [
+        {
+          "title": "Divorce Problem Solution",
+          "slug": "divorce-problem-solution",
+          "icon": "Users",
+          "summary": "Remedies to restore understanding between partners and avoid separation."
+        }
+      ]
+    },
+    {
+      "name": "Healing",
+      "slug": "healing",
+      "items": [
+        {
+          "title": "Spiritual Healing",
+          "slug": "spiritual-healing",
+          "icon": "Leaf",
+          "summary": "Energy-balancing remedies to relieve stress, anxiety and blocked progress."
+        }
+      ]
+    }
+  ]
+}

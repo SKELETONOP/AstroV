@@ -1,0 +1,15 @@
+{
+  "name": "Astro Vikesh Kumar",
+  "tagline": "Trusted Astrology & Spiritual Consultation",
+  "phone": "+91 98765 43210",
+  "phoneHref": "tel:+919876543210",
+  "whatsapp": "919876543210",
+  "email": "consult@astrovikeshkumar.com",
+  "address": "Karol Bagh, New Delhi, Delhi 110005, India",
+  "hours": "Available daily, 8:00 AM – 9:00 PM IST",
+  "social": {
+    "facebook": "https://facebook.com/astrovikeshkumar",
+    "instagram": "https://instagram.com/astrovikeshkumar",
+    "youtube": "https://youtube.com/@astrovikeshkumar"
+  }
+}

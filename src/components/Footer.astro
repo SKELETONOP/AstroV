@@ -1,0 +1,99 @@
+---
+import Icon from './Icon.astro';
+import SocialIcon from './SocialIcon.astro';
+import site from '../data/site.json';
+import cities from '../data/cities.json';
+
+const visibleCities = cities.slice(0, 6);
+const moreCities = cities.slice(6);
+
+const secondaryNav = [
+  { label: 'About Us', href: '/about' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'Contact', href: '/contact' },
+  { label: 'Disclaimer', href: '/disclaimer' },
+  { label: 'Privacy Policy', href: '/privacy-policy' },
+  { label: 'Sitemap', href: '/sitemap' },
+];
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="border-t border-neutral-200 bg-neutral-100">
+  <div class="container-page grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
+    <div>
+      <p class="font-display text-lg font-bold text-neutral-900">{site.name}</p>
+      <p class="mt-2 text-sm text-neutral-600">{site.tagline}</p>
+      <ul class="mt-4 space-y-2 text-sm text-neutral-700">
+        <li class="flex items-start gap-2">
+          <Icon name="MapPin" size={16} class="mt-0.5 shrink-0 text-accent-600" />
+          <span>{site.address}</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <Icon name="Phone" size={16} class="shrink-0 text-accent-600" />
+          <a href={site.phoneHref} class="hover:text-accent-700">{site.phone}</a>
+        </li>
+        <li class="flex items-center gap-2">
+          <Icon name="Mail" size={16} class="shrink-0 text-accent-600" />
+          <a href={`mailto:${site.email}`} class="hover:text-accent-700">{site.email}</a>
+        </li>
+        <li class="flex items-center gap-2">
+          <Icon name="Clock" size={16} class="shrink-0 text-accent-600" />
+          <span>{site.hours}</span>
+        </li>
+      </ul>
+      <div class="mt-5 flex items-center gap-3">
+        <a href={site.social.facebook} aria-label="Facebook" class="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-300 text-neutral-600 hover:border-accent-600 hover:text-accent-600">
+          <SocialIcon name="facebook" size={16} />
+        </a>
+        <a href={site.social.instagram} aria-label="Instagram" class="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-300 text-neutral-600 hover:border-accent-600 hover:text-accent-600">
+          <SocialIcon name="instagram" size={16} />
+        </a>
+        <a href={site.social.youtube} aria-label="YouTube" class="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-300 text-neutral-600 hover:border-accent-600 hover:text-accent-600">
+          <SocialIcon name="youtube" size={16} />
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <p class="text-sm font-semibold uppercase tracking-wide text-neutral-500">Explore</p>
+      <ul class="mt-4 space-y-2 text-sm text-neutral-700">
+        {secondaryNav.map((link) => (
+          <li><a href={link.href} class="hover:text-accent-700">{link.label}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <p class="text-sm font-semibold uppercase tracking-wide text-neutral-500">Consultations Available In</p>
+      <ul class="mt-4 grid grid-cols-2 gap-2 text-sm text-neutral-700 sm:grid-cols-3">
+        {visibleCities.map((city) => (
+          <li><a href={`/locations/${city.slug}`} class="hover:text-accent-700">{city.name}</a></li>
+        ))}
+      </ul>
+
+      {moreCities.length > 0 && (
+        <details class="mt-2 group">
+          <summary class="flex w-fit cursor-pointer list-none items-center gap-1 text-sm font-medium text-accent-700 hover:text-accent-800">
+            <span class="group-open:hidden">Show more cities</span>
+            <span class="hidden group-open:inline">Show fewer cities</span>
+            <Icon name="ChevronDown" size={16} class="transition-transform group-open:rotate-180" />
+          </summary>
+          <ul class="mt-2 grid grid-cols-2 gap-2 text-sm text-neutral-700 sm:grid-cols-3">
+            {moreCities.map((city) => (
+              <li><a href={`/locations/${city.slug}`} class="hover:text-accent-700">{city.name}</a></li>
+            ))}
+          </ul>
+        </details>
+      )}
+    </div>
+  </div>
+
+  <div class="border-t border-neutral-200 py-6">
+    <div class="container-page flex flex-col items-center justify-between gap-2 text-xs text-neutral-500 sm:flex-row">
+      <p>&copy; {currentYear} {site.name}. All rights reserved.</p>
+      <p>Consultations offered for guidance and wellbeing purposes. See our <a href="/disclaimer" class="underline hover:text-accent-700">disclaimer</a>.</p>
+    </div>
+  </div>
+</footer>

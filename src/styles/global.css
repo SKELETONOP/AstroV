@@ -1,0 +1,110 @@
+@import 'tailwindcss';
+@config '../../tailwind.config.mjs';
+
+:root {
+  /* Design tokens — single fixed dark/celestial theme (deep navy + warm gold) */
+  --bg: #0B0E1C;
+  --surface: #151C36;
+  --surface-muted: #10142A;
+  --border: #2A3357;
+  --text-primary: #F7F1E3;
+  --text-secondary: #B9BDD1;
+  --text-muted: #7A81A0;
+  --accent-500: #D4A24E;
+  --accent-600: #E8C170;
+  --success: #4ADE80;
+  --error: #F87171;
+
+  /* Neutral ramp — aliases the tokens above where they line up 1:1,
+     with independent values for the shades that have no token equivalent. */
+  --neutral-50: var(--bg);
+  --neutral-100: var(--surface-muted);
+  --neutral-150: #171D38;
+  --neutral-200: var(--border);
+  --neutral-300: #3A4370;
+  --neutral-400: var(--text-muted);
+  --neutral-500: #8D93B3;
+  --neutral-600: var(--text-secondary);
+  --neutral-700: #CBCEDD;
+  --neutral-800: #E8E9F2;
+  --neutral-900: var(--text-primary);
+
+  /* Accent (gold) ramp — 600/700 alias --accent-500/--accent-600 */
+  --accent-ramp-50: #241D0D;
+  --accent-ramp-100: #362913;
+  --accent-ramp-200: #4A3A19;
+  --accent-ramp-300: #6B551F;
+  --accent-ramp-400: #9C7C2C;
+  --accent-ramp-500: #C99A3B;
+  --accent-ramp-800: #F0D48F;
+  --accent-ramp-900: #F7E4B8;
+
+  color-scheme: dark;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-neutral-50 text-neutral-800 font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-neutral-900;
+  }
+
+  a {
+    @apply transition-colors;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent-600;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .prose-content h2 {
+    @apply text-2xl md:text-3xl font-semibold mt-10 mb-4;
+  }
+
+  .prose-content h3 {
+    @apply text-xl md:text-2xl font-semibold mt-8 mb-3;
+  }
+
+  .prose-content p {
+    @apply text-neutral-700 leading-7 mb-4;
+  }
+
+  .prose-content ul {
+    @apply list-disc pl-6 mb-4 space-y-2 text-neutral-700;
+  }
+
+  .prose-content ol {
+    @apply list-decimal pl-6 mb-4 space-y-2 text-neutral-700;
+  }
+
+  /* Pull-quote styling for long-form content */
+  .pull-quote {
+    @apply border-l-4 border-accent-600 pl-6 py-2 my-8 text-xl md:text-2xl font-display italic text-neutral-800;
+  }
+
+  /* Callout box for long-form content */
+  .callout {
+    @apply rounded-lg border border-accent-200 bg-accent-50 p-5 my-8;
+  }
+
+  /* Numbered step layout */
+  .step-item {
+    @apply flex gap-4 items-start;
+  }
+
+  .step-number {
+    @apply flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent-600 text-neutral-50 font-display font-semibold;
+  }
+}
