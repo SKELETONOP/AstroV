@@ -1,6 +1,7 @@
 import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration, useRouteError } from 'react-router';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import PageLoader from './components/PageLoader';
 import StickyMobileCTA from './components/StickyMobileCTA';
 import stylesheetHref from './styles/global.css?url';
 
@@ -25,6 +26,7 @@ export function Layout({ children }) {
         <Links />
       </head>
       <body className="flex min-h-screen flex-col">
+        <PageLoader />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded focus:bg-accent-600 focus:px-4 focus:py-2 focus:text-neutral-50"
