@@ -1,8 +1,7 @@
-import type { MetaFunction } from 'react-router';
 import site from '../data/site.json';
 import { buildMeta } from '../lib/meta';
 
-export const meta: MetaFunction = ({ location }) =>
+export const meta = ({ location }) =>
   buildMeta({
     title: 'Privacy Policy',
     description: 'How Astro Vikesh Kumar collects, uses and protects personal information shared through this website.',

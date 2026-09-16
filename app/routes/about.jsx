@@ -1,10 +1,9 @@
-import type { MetaFunction } from 'react-router';
 import Button from '../components/Button';
-import Icon, { type IconName } from '../components/Icon';
+import Icon from '../components/Icon';
 import StatStrip from '../components/StatStrip';
 import { buildMeta } from '../lib/meta';
 
-export const meta: MetaFunction = ({ location }) =>
+export const meta = ({ location }) =>
   buildMeta({
     title: 'About Vikesh Kumar',
     description:
@@ -19,7 +18,7 @@ const stats = [
   { number: '6', label: 'Areas of Specialisation' },
 ];
 
-const values: Array<{ icon: IconName; title: string; description: string }> = [
+const values = [
   {
     icon: 'ScrollText',
     title: 'Traditional foundation',

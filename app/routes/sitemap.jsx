@@ -1,11 +1,10 @@
-import type { MetaFunction } from 'react-router';
 import AppLink from '../components/AppLink';
 import cities from '../data/cities.json';
 import { blogPosts } from '../lib/content';
 import { buildMeta } from '../lib/meta';
 import { allServices } from '../lib/services';
 
-export const meta: MetaFunction = ({ location }) =>
+export const meta = ({ location }) =>
   buildMeta({
     title: 'Sitemap',
     description: 'A full overview of every page on the Astro Vikesh Kumar website, including services, locations and blog articles.',

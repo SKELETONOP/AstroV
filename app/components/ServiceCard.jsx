@@ -1,16 +1,6 @@
 import site from '../data/site.json';
 import AppLink from './AppLink';
-import Icon, { type IconName } from './Icon';
-
-interface ServiceCardProps {
-  icon: IconName;
-  title: string;
-  description: string;
-  slug: string;
-  phone?: string;
-  whatsappLink?: string;
-  className?: string;
-}
+import Icon from './Icon';
 
 export default function ServiceCard({
   icon,
@@ -20,7 +10,7 @@ export default function ServiceCard({
   phone = site.phone,
   whatsappLink = `https://wa.me/${site.whatsapp}`,
   className = '',
-}: ServiceCardProps) {
+}) {
   return (
     <article
       className={`flex h-full flex-col rounded-xl border border-neutral-200 bg-surface p-6 shadow-soft transition-shadow hover:shadow-card ${className}`}

@@ -1,21 +1,11 @@
 import { useRef, useState } from 'react';
 import Icon from './Icon';
 
-interface FaqItem {
-  question: string;
-  answer: string;
-}
+export default function FaqAccordion({ items, idPrefix = 'faq' }) {
+  const [openIndex, setOpenIndex] = useState(null);
+  const triggerRefs = useRef([]);
 
-interface FaqAccordionProps {
-  items: FaqItem[];
-  idPrefix?: string;
-}
-
-export default function FaqAccordion({ items, idPrefix = 'faq' }: FaqAccordionProps) {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const triggerRefs = useRef<Array<HTMLButtonElement | null>>([]);
-
-  const focusTrigger = (index: number) => {
+  const focusTrigger = (index) => {
     const len = items.length;
     triggerRefs.current[(index + len) % len]?.focus();
   };

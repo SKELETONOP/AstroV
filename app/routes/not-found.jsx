@@ -1,9 +1,8 @@
-import type { MetaFunction } from 'react-router';
 import AppLink from '../components/AppLink';
 import Button from '../components/Button';
 import { buildMeta } from '../lib/meta';
 
-export const meta: MetaFunction = ({ location }) =>
+export const meta = ({ location }) =>
   buildMeta({
     title: 'Page Not Found',
     description: 'The page you are looking for could not be found.',

@@ -1,11 +1,10 @@
-import { useRef, useState, type FormEvent } from 'react';
-import type { MetaFunction } from 'react-router';
+import { useRef, useState } from 'react';
 import Button from '../components/Button';
 import Icon from '../components/Icon';
 import site from '../data/site.json';
 import { buildMeta } from '../lib/meta';
 
-export const meta: MetaFunction = ({ location }) =>
+export const meta = ({ location }) =>
   buildMeta({
     title: 'Contact Us',
     description:
@@ -13,36 +12,34 @@ export const meta: MetaFunction = ({ location }) =>
     pathname: location.pathname,
   });
 
-const validators: Record<string, (value: string) => boolean> = {
+const validators = {
   name: (v) => v.trim().length > 1,
   phone: (v) => /^[+\d][\d\s()-]{6,}$/.test(v.trim()),
   email: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()),
   message: (v) => v.trim().length > 4,
 };
 
-const fieldErrorMessage: Record<string, string> = {
+const fieldErrorMessage = {
   name: 'Please enter your name.',
   phone: 'Please enter a valid phone number.',
   email: 'Please enter a valid email address.',
   message: 'Please enter a short message.',
 };
 
-type Status = 'idle' | 'submitting' | 'success' | 'error';
-
 export default function Contact() {
-  const formRef = useRef<HTMLFormElement>(null);
-  const [errors, setErrors] = useState<Record<string, boolean>>({});
-  const [status, setStatus] = useState<Status>('idle');
+  const formRef = useRef(null);
+  const [errors, setErrors] = useState({});
+  const [status, setStatus] = useState('idle');
 
-  const validateField = (name: string, value: string) => {
+  const validateField = (name, value) => {
     const validator = validators[name];
     if (!validator) return;
     setErrors((prev) => ({ ...prev, [name]: !validator(value) }));
   };
 
-  const validateForm = (form: HTMLFormElement) => {
+  const validateForm = (form) => {
     const data = new FormData(form);
-    const nextErrors: Record<string, boolean> = {};
+    const nextErrors = {};
     let valid = true;
     for (const field of Object.keys(validators)) {
       const value = String(data.get(field) ?? '');
@@ -54,7 +51,7 @@ export default function Contact() {
     return valid;
   };
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const form = formRef.current;
     if (!form) return;
@@ -68,7 +65,7 @@ export default function Contact() {
       const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData as unknown as Record<string, string>).toString(),
+        body: new URLSearchParams(formData).toString(),
       });
 
       if (!response.ok) throw new Error('Form submission failed');

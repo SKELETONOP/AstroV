@@ -1,14 +1,4 @@
-interface Stat {
-  number: string;
-  label: string;
-}
-
-interface StatStripProps {
-  stats: Stat[];
-  className?: string;
-}
-
-export default function StatStrip({ stats, className = '' }: StatStripProps) {
+export default function StatStrip({ stats, className = '' }) {
   return (
     <div className={`grid grid-cols-2 gap-6 sm:grid-cols-4 ${className}`}>
       {stats.map((stat) => (

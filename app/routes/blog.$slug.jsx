@@ -1,11 +1,10 @@
-import type { MetaFunction } from 'react-router';
 import { useParams } from 'react-router';
 import Button from '../components/Button';
 import AppLink from '../components/AppLink';
 import { getBlogPost } from '../lib/content';
 import { buildMeta } from '../lib/meta';
 
-export const meta: MetaFunction = ({ location, params }) => {
+export const meta = ({ location, params }) => {
   const post = params.slug ? getBlogPost(params.slug) : undefined;
   if (!post) return buildMeta({ title: 'Article Not Found', description: 'This article could not be found.', pathname: location.pathname });
   return buildMeta({

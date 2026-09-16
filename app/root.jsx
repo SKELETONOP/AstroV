@@ -1,19 +1,10 @@
-import {
-  isRouteErrorResponse,
-  Links,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-  useRouteError,
-  type LinksFunction,
-} from 'react-router';
+import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration, useRouteError } from 'react-router';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import StickyMobileCTA from './components/StickyMobileCTA';
 import stylesheetHref from './styles/global.css?url';
 
-export const links: LinksFunction = () => [
+export const links = () => [
   { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
   { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' },
@@ -24,7 +15,7 @@ export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: stylesheetHref },
 ];
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export function Layout({ children }) {
   return (
     <html lang="en">
       <head>
@@ -61,7 +52,7 @@ export function ErrorBoundary() {
   const error = useRouteError();
   let message = 'Oops!';
   let details = 'An unexpected error occurred.';
-  let stack: string | undefined;
+  let stack;
 
   if (isRouteErrorResponse(error)) {
     message = error.status === 404 ? '404' : 'Error';

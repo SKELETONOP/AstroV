@@ -1,10 +1,4 @@
-interface SocialIconProps {
-  name: 'facebook' | 'instagram' | 'youtube';
-  size?: number;
-  className?: string;
-}
-
-export default function SocialIcon({ name, size = 16, className }: SocialIconProps) {
+export default function SocialIcon({ name, size = 16, className }) {
   const common = {
     xmlns: 'http://www.w3.org/2000/svg',
     width: size,
@@ -13,8 +7,8 @@ export default function SocialIcon({ name, size = 16, className }: SocialIconPro
     fill: 'none',
     stroke: 'currentColor',
     strokeWidth: 1.75,
-    strokeLinecap: 'round' as const,
-    strokeLinejoin: 'round' as const,
+    strokeLinecap: 'round',
+    strokeLinejoin: 'round',
     className,
     'aria-hidden': true,
   };

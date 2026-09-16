@@ -1,28 +1,12 @@
-import type { MetaDescriptor } from 'react-router';
-
 const SITE_URL = 'https://astrovikeshkumar.netlify.app';
 const SITE_NAME = 'Astro Vikesh Kumar';
 
-interface BuildMetaOptions {
-  title: string;
-  description: string;
-  pathname: string;
-  image?: string;
-  noindex?: boolean;
-}
-
-export function buildMeta({
-  title,
-  description,
-  pathname,
-  image = '/images/og-default.svg',
-  noindex = false,
-}: BuildMetaOptions): MetaDescriptor[] {
+export function buildMeta({ title, description, pathname, image = '/images/og-default.svg', noindex = false }) {
   const pageTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
   const canonical = new URL(pathname, SITE_URL).toString();
   const ogImage = new URL(image, SITE_URL).toString();
 
-  const tags: MetaDescriptor[] = [
+  const tags = [
     { title: pageTitle },
     { name: 'description', content: description },
     { tagName: 'link', rel: 'canonical', href: canonical },

@@ -1,11 +1,6 @@
-interface LogoMarkProps {
-  size?: number;
-  className?: string;
-}
-
 const rays = Array.from({ length: 12 }, (_, i) => i * 30);
 
-export default function LogoMark({ size = 40, className }: LogoMarkProps) {
+export default function LogoMark({ size = 40, className }) {
   return (
     <svg width={size} height={size} viewBox="0 0 40 40" className={className} aria-hidden="true">
       <g stroke="var(--accent-500)" strokeWidth="1.4" strokeLinecap="round">

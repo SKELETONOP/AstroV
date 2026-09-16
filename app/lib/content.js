@@ -1,17 +1,11 @@
 import { marked } from 'marked';
 
-export interface ContentEntry {
-  slug: string;
-  data: Record<string, string>;
-  html: string;
-}
-
-function parseFrontmatter(raw: string): { data: Record<string, string>; content: string } {
+function parseFrontmatter(raw) {
   const match = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/.exec(raw);
   if (!match) return { data: {}, content: raw };
 
   const [, frontmatter, content] = match;
-  const data: Record<string, string> = {};
+  const data = {};
 
   for (const line of frontmatter.split(/\r?\n/)) {
     const fieldMatch = /^([A-Za-z0-9_]+):\s*(.*)$/.exec(line);
@@ -29,11 +23,11 @@ function parseFrontmatter(raw: string): { data: Record<string, string>; content:
   return { data, content: content.trim() };
 }
 
-function loadCollection(modules: Record<string, string>): ContentEntry[] {
+function loadCollection(modules) {
   return Object.entries(modules).map(([path, raw]) => {
-    const slug = path.split('/').pop()!.replace(/\.md$/, '');
+    const slug = path.split('/').pop().replace(/\.md$/, '');
     const { data, content } = parseFrontmatter(raw);
-    return { slug, data, html: marked.parse(content, { async: false }) as string };
+    return { slug, data, html: marked.parse(content, { async: false }) };
   });
 }
 
@@ -41,21 +35,21 @@ const blogModules = import.meta.glob('../content/blog/*.md', {
   eager: true,
   query: '?raw',
   import: 'default',
-}) as Record<string, string>;
+});
 
 const serviceModules = import.meta.glob('../content/services/*.md', {
   eager: true,
   query: '?raw',
   import: 'default',
-}) as Record<string, string>;
+});
 
-export const blogPosts: ContentEntry[] = loadCollection(blogModules);
-export const servicePages: ContentEntry[] = loadCollection(serviceModules);
+export const blogPosts = loadCollection(blogModules);
+export const servicePages = loadCollection(serviceModules);
 
-export function getBlogPost(slug: string): ContentEntry | undefined {
+export function getBlogPost(slug) {
   return blogPosts.find((p) => p.slug === slug);
 }
 
-export function getServicePage(slug: string): ContentEntry | undefined {
+export function getServicePage(slug) {
   return servicePages.find((s) => s.slug === slug);
 }

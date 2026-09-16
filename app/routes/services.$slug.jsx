@@ -1,4 +1,3 @@
-import type { MetaFunction } from 'react-router';
 import { useParams } from 'react-router';
 import AppLink from '../components/AppLink';
 import Button from '../components/Button';
@@ -8,7 +7,7 @@ import { getServicePage } from '../lib/content';
 import { buildMeta } from '../lib/meta';
 import { allServices } from '../lib/services';
 
-export const meta: MetaFunction = ({ location, params }) => {
+export const meta = ({ location, params }) => {
   const service = params.slug ? getServicePage(params.slug) : undefined;
   if (!service) {
     return buildMeta({ title: 'Service Not Found', description: 'This service could not be found.', pathname: location.pathname });

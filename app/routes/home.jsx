@@ -1,8 +1,7 @@
-import type { MetaFunction } from 'react-router';
 import Button from '../components/Button';
 import Carousel from '../components/Carousel';
 import FaqAccordion from '../components/FaqAccordion';
-import Icon, { type IconName } from '../components/Icon';
+import Icon from '../components/Icon';
 import ServiceCard from '../components/ServiceCard';
 import StatStrip from '../components/StatStrip';
 import TestimonialCard from '../components/TestimonialCard';
@@ -10,7 +9,7 @@ import AppLink from '../components/AppLink';
 import { buildMeta } from '../lib/meta';
 import { allServices } from '../lib/services';
 
-export const meta: MetaFunction = ({ location }) =>
+export const meta = ({ location }) =>
   buildMeta({
     title: 'Astro Vikesh Kumar — Astrology & Spiritual Consultation in Delhi',
     description:
@@ -75,7 +74,7 @@ const faqs = [
   },
 ];
 
-const trustBadges: Array<{ icon: IconName; label: string; caption: string }> = [
+const trustBadges = [
   { icon: 'ShieldCheck', label: '100% Confidential', caption: 'Your Privacy Matters' },
   { icon: 'Leaf', label: 'Powerful Remedies', caption: 'For Real Solutions' },
   { icon: 'Users', label: 'Expert Guidance', caption: 'Backed by Experience' },

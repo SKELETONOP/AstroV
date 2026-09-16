@@ -1,8 +1,7 @@
-import type { MetaFunction } from 'react-router';
 import site from '../data/site.json';
 import { buildMeta } from '../lib/meta';
 
-export const meta: MetaFunction = ({ location }) =>
+export const meta = ({ location }) =>
   buildMeta({
     title: 'Disclaimer',
     description: 'Disclaimer covering the nature of astrology and spiritual consultation services offered by Astro Vikesh Kumar.',

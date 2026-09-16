@@ -1,14 +1,6 @@
 import Icon from './Icon';
 
-interface TestimonialCardProps {
-  name: string;
-  location: string;
-  quote: string;
-  rating?: number;
-  className?: string;
-}
-
-export default function TestimonialCard({ name, location, quote, rating = 5, className = '' }: TestimonialCardProps) {
+export default function TestimonialCard({ name, location, quote, rating = 5, className = '' }) {
   const initials = name
     .split(' ')
     .map((part) => part[0])

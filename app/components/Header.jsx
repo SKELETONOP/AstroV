@@ -4,7 +4,7 @@ import site from '../data/site.json';
 import { serviceCategories } from '../lib/services';
 import AppLink from './AppLink';
 import Button from './Button';
-import Icon, { type IconName } from './Icon';
+import Icon from './Icon';
 import LogoMark from './LogoMark';
 
 const navLinks = [
@@ -18,7 +18,7 @@ const navLinks = [
 export default function Header() {
   const [megaOpen, setMegaOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const megaRef = useRef<HTMLDivElement>(null);
+  const megaRef = useRef(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -28,10 +28,10 @@ export default function Header() {
 
   useEffect(() => {
     if (!megaOpen) return;
-    const handleClick = (e: MouseEvent) => {
-      if (megaRef.current && !megaRef.current.contains(e.target as Node)) setMegaOpen(false);
+    const handleClick = (e) => {
+      if (megaRef.current && !megaRef.current.contains(e.target)) setMegaOpen(false);
     };
-    const handleKey = (e: KeyboardEvent) => {
+    const handleKey = (e) => {
       if (e.key === 'Escape') setMegaOpen(false);
     };
     document.addEventListener('click', handleClick);
@@ -49,7 +49,7 @@ export default function Header() {
 
   useEffect(() => {
     if (!mobileOpen) return;
-    const handleKey = (e: KeyboardEvent) => {
+    const handleKey = (e) => {
       if (e.key === 'Escape') setMobileOpen(false);
     };
     document.addEventListener('keydown', handleKey);
@@ -99,7 +99,7 @@ export default function Header() {
                                 href={`/services/${item.slug}`}
                                 className="flex items-start gap-2 rounded-md p-1.5 text-sm text-neutral-700 hover:bg-accent-50 hover:text-accent-700"
                               >
-                                <Icon name={item.icon as IconName} size={16} className="mt-0.5 shrink-0 text-accent-600" />
+                                <Icon name={item.icon} size={16} className="mt-0.5 shrink-0 text-accent-600" />
                                 <span>{item.title}</span>
                               </AppLink>
                             </li>
@@ -190,7 +190,7 @@ export default function Header() {
                           href={`/services/${item.slug}`}
                           className="flex items-center gap-2 rounded-md py-2 text-sm text-neutral-700 hover:text-accent-700"
                         >
-                          <Icon name={item.icon as IconName} size={16} className="text-accent-600" />
+                          <Icon name={item.icon} size={16} className="text-accent-600" />
                           {item.title}
                         </AppLink>
                       </li>

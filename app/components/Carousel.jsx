@@ -1,19 +1,13 @@
-import { useRef, type ReactNode } from 'react';
+import { useRef } from 'react';
 import Icon from './Icon';
 
-interface CarouselProps {
-  ariaLabel: string;
-  className?: string;
-  children: ReactNode;
-}
+export default function Carousel({ ariaLabel, className = '', children }) {
+  const trackRef = useRef(null);
 
-export default function Carousel({ ariaLabel, className = '', children }: CarouselProps) {
-  const trackRef = useRef<HTMLDivElement>(null);
-
-  const scrollByCard = (direction: 1 | -1) => {
+  const scrollByCard = (direction) => {
     const track = trackRef.current;
     if (!track) return;
-    const firstChild = track.firstElementChild as HTMLElement | null;
+    const firstChild = track.firstElementChild;
     const amount = (firstChild?.getBoundingClientRect().width ?? 300) + 24;
     track.scrollBy({ left: amount * direction, behavior: 'smooth' });
   };

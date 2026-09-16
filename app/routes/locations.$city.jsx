@@ -1,4 +1,3 @@
-import type { MetaFunction } from 'react-router';
 import { useParams } from 'react-router';
 import AppLink from '../components/AppLink';
 import Button from '../components/Button';
@@ -7,11 +6,11 @@ import cities from '../data/cities.json';
 import site from '../data/site.json';
 import { buildMeta } from '../lib/meta';
 
-function findCity(slug: string | undefined) {
+function findCity(slug) {
   return cities.find((c) => c.slug === slug);
 }
 
-export const meta: MetaFunction = ({ location, params }) => {
+export const meta = ({ location, params }) => {
   const city = findCity(params.city);
   if (!city) {
     return buildMeta({ title: 'Location Not Found', description: 'This location could not be found.', pathname: location.pathname });
