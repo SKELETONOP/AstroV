@@ -11,13 +11,13 @@ export default function FaqAccordion({ items, idPrefix = 'faq' }) {
   };
 
   return (
-    <div className="divide-y divide-neutral-200 rounded-xl border border-neutral-200 bg-surface">
+    <div className="space-y-4">
       {items.map((item, i) => {
         const buttonId = `${idPrefix}-button-${i}`;
         const panelId = `${idPrefix}-panel-${i}`;
         const isOpen = openIndex === i;
         return (
-          <div key={buttonId}>
+          <div key={buttonId} className="overflow-hidden rounded-2xl border border-accent-500/30 bg-surface shadow-soft">
             <h3>
               <button
                 type="button"
@@ -27,7 +27,7 @@ export default function FaqAccordion({ items, idPrefix = 'faq' }) {
                 }}
                 aria-expanded={isOpen}
                 aria-controls={panelId}
-                className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-base font-medium text-neutral-900 hover:bg-neutral-50"
+                className="flex w-full items-center gap-4 px-5 py-4 text-left hover:bg-accent-50/5"
                 onClick={() => setOpenIndex(isOpen ? null : i)}
                 onKeyDown={(e) => {
                   if (e.key === 'ArrowDown') {
@@ -45,12 +45,19 @@ export default function FaqAccordion({ items, idPrefix = 'faq' }) {
                   }
                 }}
               >
-                <span>{item.question}</span>
-                <Icon
-                  name="Plus"
-                  size={18}
-                  className={`shrink-0 text-accent-600 transition-transform ${isOpen ? 'rotate-45' : ''}`}
-                />
+                {item.icon && (
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-accent-500/50 text-accent-600">
+                    <Icon name={item.icon} size={18} />
+                  </span>
+                )}
+                <span className="flex-1 font-display text-base font-medium text-neutral-900">{item.question}</span>
+                <span
+                  className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-accent-500/50 text-accent-600 transition-transform ${
+                    isOpen ? 'rotate-45' : ''
+                  }`}
+                >
+                  <Icon name="Plus" size={16} />
+                </span>
               </button>
             </h3>
             <div
@@ -58,7 +65,7 @@ export default function FaqAccordion({ items, idPrefix = 'faq' }) {
               role="region"
               aria-labelledby={buttonId}
               hidden={!isOpen}
-              className="px-5 pb-4 text-sm leading-6 text-neutral-600"
+              className={`px-5 pb-5 text-sm leading-6 text-neutral-600 ${item.icon ? 'sm:pl-19' : ''}`}
             >
               {item.answer}
             </div>

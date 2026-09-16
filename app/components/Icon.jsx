@@ -29,6 +29,10 @@ import {
   TrendingUp,
   Flower2,
   Globe,
+  Orbit,
+  Sun,
+  MoonStar,
+  Infinity,
 } from 'lucide-react';
 
 const icons = {
@@ -62,6 +66,10 @@ const icons = {
   TrendingUp,
   Flower2,
   Globe,
+  Orbit,
+  Sun,
+  MoonStar,
+  Infinity,
 };
 
 export default function Icon({ name, size = 20, strokeWidth = 1.75, ...rest }) {
