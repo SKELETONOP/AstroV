@@ -27,6 +27,8 @@ import {
   Landmark,
   Calendar,
   TrendingUp,
+  Flower2,
+  Globe,
 } from 'lucide-react';
 
 const icons = {
@@ -58,6 +60,8 @@ const icons = {
   Landmark,
   Calendar,
   TrendingUp,
+  Flower2,
+  Globe,
 };
 
 export default function Icon({ name, size = 20, strokeWidth = 1.75, ...rest }) {

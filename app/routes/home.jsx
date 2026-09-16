@@ -74,6 +74,13 @@ const faqs = [
   },
 ];
 
+const philosophyStats = [
+  { icon: 'Users', label: '20+ Years', caption: 'Of Trust' },
+  { icon: 'Flower2', label: 'Thousands', caption: 'Of Happy Clients' },
+  { icon: 'ShieldCheck', label: 'Honest Guidance', caption: 'Always' },
+  { icon: 'Globe', label: 'Clients Worldwide', caption: 'India & Abroad' },
+];
+
 const trustBadges = [
   { icon: 'ShieldCheck', label: '100% Confidential', caption: 'Your Privacy Matters' },
   { icon: 'Leaf', label: 'Powerful Remedies', caption: 'For Real Solutions' },
@@ -137,22 +144,50 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Intro content block */}
-      <section className="border-t border-neutral-200 bg-surface py-14 lg:py-20">
-        <div className="container-page grid gap-10 lg:grid-cols-3">
-          <h2 className="text-2xl font-bold text-neutral-900 lg:col-span-1">
-            Guidance rooted in tradition, delivered with honesty
-          </h2>
-          <div className="lg:col-span-2">
-            <p className="text-base leading-7 text-neutral-600">
-              For over two decades, Pandit Vikesh Kumar has helped clients across India and abroad navigate difficult
-              decisions in love, marriage, family and career. Every consultation begins with listening, not a
-              prescribed ritual — remedies are only ever suggested when your chart genuinely calls for them.
-            </p>
-            <p className="mt-4 text-base leading-7 text-neutral-600">
-              Whether you need a single, focused answer or an ongoing relationship with a trusted advisor, sessions are
-              available over phone, WhatsApp, video call or in person at the Delhi office.
-            </p>
+      {/* Intro / philosophy block */}
+      <section className="relative overflow-hidden border-t border-neutral-200 bg-[url('/images/philosophy-bg-mobile.png')] bg-cover bg-center py-16 lg:bg-[url('/images/philosophy-bg.png')] lg:bg-cover lg:bg-center lg:py-28">
+        <div className="container-page relative z-10">
+          <div className="grid gap-10 lg:grid-cols-5 lg:gap-16">
+            <div className="lg:col-span-2">
+              <p className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-accent-700">
+                <span className="h-px w-8 bg-accent-600/50" />
+                Our Philosophy
+                <span className="h-px w-8 bg-accent-600/50" />
+              </p>
+              <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-neutral-900 sm:text-4xl lg:text-5xl">
+                Guidance rooted in tradition, delivered{' '}
+                <span className="text-accent-600">with honesty</span>
+              </h2>
+              <div className="mt-6 flex items-center gap-4">
+                <span className="h-px flex-1 bg-accent-600/30" />
+                <Icon name="Sparkle" size={20} className="shrink-0 text-accent-600" />
+                <span className="h-px flex-1 bg-accent-600/30" />
+              </div>
+            </div>
+
+            <div className="lg:col-span-3">
+              <p className="text-base leading-7 text-neutral-600">
+                For over two decades, Pandit Vikesh Kumar has helped clients across India and abroad navigate difficult
+                decisions in love, marriage, family and career. Every consultation begins with listening, not a
+                prescribed ritual — remedies are only ever suggested when your chart genuinely calls for them.
+              </p>
+              <p className="mt-4 text-base leading-7 text-neutral-600">
+                Whether you need a single, focused answer or an ongoing relationship with a trusted advisor, sessions are
+                available over phone, WhatsApp, video call or in person at the Delhi office.
+              </p>
+
+              <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4 sm:divide-x sm:divide-neutral-900/10">
+                {philosophyStats.map((stat) => (
+                  <div key={stat.label} className="text-center sm:px-6 sm:first:pl-0">
+                    <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-accent-500/50 text-accent-600">
+                      <Icon name={stat.icon} size={22} />
+                    </span>
+                    <p className="mt-3 font-display text-lg font-bold text-neutral-900">{stat.label}</p>
+                    <p className="mt-0.5 text-xs uppercase tracking-wide text-neutral-500">{stat.caption}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
