@@ -41,8 +41,8 @@ export default function LocationCity() {
 
   return (
     <>
-      <section className="border-b border-neutral-200 bg-neutral-50 py-12 lg:py-16">
-        <div className="container-page">
+      <section className="relative overflow-hidden border-b border-neutral-200 bg-[url('/images/testimonials-bg-mobile.png')] bg-cover bg-center py-12 lg:bg-[url('/images/testimonials-bg.png')] lg:bg-cover lg:bg-center lg:py-16">
+        <div className="container-page relative z-10">
           <nav aria-label="Breadcrumb" className="mb-4 text-sm text-neutral-500">
             <AppLink href="/" className="hover:text-accent-700">
               Home
@@ -52,8 +52,11 @@ export default function LocationCity() {
             </span>
             <span className="text-neutral-700">{city.name}</span>
           </nav>
-          <p className="text-sm font-semibold uppercase tracking-wide text-accent-700">Serving {city.country}</p>
-          <h1 className="mt-2 text-3xl font-extrabold text-neutral-900 sm:text-4xl">
+          <p className="inline-flex items-center gap-2 rounded-full border border-accent-500/40 bg-accent-50 px-3 py-1 text-sm font-medium text-accent-600">
+            <Icon name="Globe" size={14} />
+            Serving {city.country}
+          </p>
+          <h1 className="mt-3 font-display text-3xl font-extrabold text-neutral-900 sm:text-4xl">
             Astrologer &amp; Spiritual Consultant for Clients in {city.name}
           </h1>
           <p className="mt-4 max-w-2xl text-lg leading-7 text-neutral-600">
@@ -98,17 +101,21 @@ export default function LocationCity() {
             </ul>
           </div>
 
-          <div className="overflow-hidden rounded-2xl border border-neutral-200 shadow-card">
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-accent-500/30 shadow-card">
+            <div className="absolute inset-0 bg-[url('/images/about-section-bg.png')] bg-cover bg-center" />
+            <div className="absolute inset-0 bg-gradient-to-t from-surface/70 via-surface/20 to-transparent" />
             <div
-              className="flex aspect-[4/3] w-full items-center justify-center bg-neutral-100 text-center text-sm text-neutral-500"
+              className="relative z-10 flex h-full w-full flex-col items-center justify-center text-center text-sm text-neutral-500"
               role="img"
               aria-label={`Map placeholder showing ${city.name}, ${city.country}`}
             >
-              <div>
-                <Icon name="MapPin" size={28} className="mx-auto mb-2 text-accent-600" />
-                Map of {city.name}, {city.country}
-                <p className="mt-1 text-xs text-neutral-400">Map embed placeholder — query: {mapQuery}</p>
-              </div>
+              <span className="flex h-14 w-14 items-center justify-center rounded-full border border-accent-500/50 bg-surface/60 text-accent-600">
+                <Icon name="MapPin" size={26} />
+              </span>
+              <p className="mt-3 font-display text-lg font-semibold text-neutral-900">
+                {city.name}, {city.country}
+              </p>
+              <p className="mt-1 text-xs text-neutral-400">Map embed placeholder — query: {mapQuery}</p>
             </div>
           </div>
         </div>
@@ -116,6 +123,7 @@ export default function LocationCity() {
 
       <section className="border-t border-neutral-200 bg-accent-50 py-12">
         <div className="container-page flex flex-col items-center gap-4 text-center">
+          <Icon name="Sparkles" size={28} className="text-accent-600" />
           <h2 className="text-2xl font-bold text-neutral-900">Ready to talk, {city.name}?</h2>
           <p className="max-w-xl text-neutral-600">
             Book a consultation and get clear, practical guidance tailored to your chart and your situation.

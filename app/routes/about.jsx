@@ -39,30 +39,35 @@ const values = [
 export default function About() {
   return (
     <>
-      <section className="border-b border-neutral-200 bg-neutral-50 py-12 lg:py-16">
-        <div className="container-page grid gap-10 lg:grid-cols-2 lg:items-center">
+      <section className="relative overflow-hidden border-b border-neutral-200 bg-[url('/images/about-section-bg-mobile.png')] bg-cover bg-center py-12 lg:bg-[url('/images/about-section-bg.png')] lg:bg-cover lg:bg-center lg:py-20">
+        <div className="container-page relative z-10 grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wide text-accent-700">About Us</p>
-            <h1 className="mt-2 text-3xl font-extrabold text-neutral-900 sm:text-4xl">
+            <p className="inline-flex items-center gap-2 rounded-full border border-accent-500/40 bg-accent-50 px-3 py-1 text-sm font-medium text-accent-600">
+              <Icon name="Sparkle" size={16} />
+              About Us
+            </p>
+            <h1 className="mt-4 font-display text-3xl font-extrabold leading-tight text-neutral-900 sm:text-4xl">
               A practical approach to astrology and spiritual guidance
             </h1>
-            <p className="mt-4 text-lg leading-7 text-neutral-600">
+            <p className="mt-4 max-w-xl text-lg leading-7 text-neutral-600">
               Pandit Vikesh Kumar has spent more than two decades helping clients across India and abroad find
               clarity in moments of difficulty — through honest reading, not theatre.
             </p>
           </div>
-          <img
-            src="/images/about.svg"
-            alt="Abstract illustration representing decades of astrological study"
-            width={900}
-            height={700}
-            className="w-full rounded-2xl border border-neutral-200 shadow-card"
-          />
+          <div className="relative mx-auto w-full max-w-sm lg:max-w-none">
+            <img
+              src="/images/about-portrait.png"
+              alt="Pandit Vikesh Kumar seated at his desk with a zodiac wheel behind him"
+              width={900}
+              height={900}
+              className="aspect-square w-full rounded-2xl border border-accent-500/40 object-cover shadow-card"
+            />
+          </div>
         </div>
       </section>
 
-      <section className="py-12 lg:py-16">
-        <div className="container-page max-w-3xl prose-content">
+      <section className="relative overflow-hidden bg-[url('/images/philosophy-bg-mobile.png')] bg-cover bg-center py-12 lg:bg-[url('/images/philosophy-bg.png')] lg:bg-cover lg:bg-center lg:py-16">
+        <div className="container-page relative z-10 max-w-3xl prose-content">
           <h2>How it started</h2>
           <p>
             Vikesh Kumar&apos;s introduction to astrology began in childhood, studying under family elders who had
@@ -100,23 +105,37 @@ export default function About() {
         </div>
       </section>
 
-      <section className="border-t border-neutral-200 bg-surface py-12 lg:py-16">
-        <div className="container-page">
+      <section className="relative overflow-hidden border-t border-neutral-200 bg-[url('/images/stats-bg-mobile.png')] bg-cover bg-center py-12 lg:bg-[url('/images/stats-bg.png')] lg:bg-cover lg:bg-center lg:py-16">
+        <div className="container-page relative z-10">
           <StatStrip stats={stats} />
         </div>
       </section>
 
       <section className="border-t border-neutral-200 bg-neutral-50 py-12 lg:py-16">
         <div className="container-page">
-          <h2 className="text-2xl font-bold text-neutral-900 sm:text-3xl">What Guides This Practice</h2>
+          <p className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-accent-700">
+            <span className="h-px w-8 bg-accent-600/50" />
+            Our Values
+          </p>
+          <h2 className="mt-3 text-2xl font-bold text-neutral-900 sm:text-3xl">What Guides This Practice</h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-3">
             {values.map((value) => (
-              <div key={value.title} className="rounded-xl border border-neutral-200 bg-surface p-6 shadow-soft">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full border border-accent-500/40 bg-accent-50 text-accent-600">
-                  <Icon name={value.icon} size={20} />
+              <div
+                key={value.title}
+                className="relative flex h-full flex-col overflow-hidden rounded-xl border border-accent-500/30 p-6 shadow-card"
+              >
+                <div className="absolute inset-0 bg-[url('/images/service-card-bg.png')] bg-cover bg-top" />
+                <div className="absolute inset-0 bg-gradient-to-b from-surface/40 via-surface/85 to-surface" />
+                <div className="relative z-10">
+                  <span className="relative flex h-[60px] w-[60px] items-center justify-center">
+                    <span className="absolute inset-0 rounded-full border border-dashed border-accent-500/25" />
+                    <span className="flex h-11 w-11 items-center justify-center rounded-full border border-accent-500/60 text-accent-600">
+                      <Icon name={value.icon} size={20} />
+                    </span>
+                  </span>
+                  <h3 className="mt-4 text-base font-semibold text-neutral-900">{value.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-neutral-600">{value.description}</p>
                 </div>
-                <h3 className="mt-4 text-base font-semibold text-neutral-900">{value.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-neutral-600">{value.description}</p>
               </div>
             ))}
           </div>
@@ -125,6 +144,7 @@ export default function About() {
 
       <section className="border-t border-neutral-200 bg-accent-50 py-12">
         <div className="container-page flex flex-col items-center gap-4 text-center">
+          <Icon name="Sparkles" size={28} className="text-accent-600" />
           <h2 className="text-2xl font-bold text-neutral-900">Have a question you&apos;d like guidance on?</h2>
           <Button href="/contact" variant="primary" size="lg">
             Book a Consultation

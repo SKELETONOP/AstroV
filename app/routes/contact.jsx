@@ -77,9 +77,13 @@ export default function Contact() {
 
   return (
     <>
-      <section className="border-b border-neutral-200 bg-neutral-50 py-12 lg:py-16">
-        <div className="container-page">
-          <h1 className="text-3xl font-extrabold text-neutral-900 sm:text-4xl">Get in Touch</h1>
+      <section className="relative overflow-hidden border-b border-neutral-200 bg-[url('/images/testimonials-bg-mobile.png')] bg-cover bg-center py-12 lg:bg-[url('/images/testimonials-bg.png')] lg:bg-cover lg:bg-center lg:py-16">
+        <div className="container-page relative z-10">
+          <p className="inline-flex items-center gap-2 rounded-full border border-accent-500/40 bg-accent-50 px-3 py-1 text-sm font-medium text-accent-600">
+            <Icon name="MessageCircle" size={16} />
+            We&apos;d love to hear from you
+          </p>
+          <h1 className="mt-4 font-display text-3xl font-extrabold text-neutral-900 sm:text-4xl">Get in Touch</h1>
           <p className="mt-4 max-w-2xl text-lg leading-7 text-neutral-600">
             Send a message and we will get back to you, usually within a few hours. For urgent matters, call or
             message on WhatsApp directly.
@@ -90,30 +94,34 @@ export default function Contact() {
       <section className="py-12 lg:py-16">
         <div className="container-page grid gap-10 lg:grid-cols-5">
           <div className="space-y-6 lg:col-span-2">
-            <div className="rounded-xl border border-neutral-200 bg-surface p-6 shadow-soft">
-              <h2 className="text-lg font-semibold text-neutral-900">Contact Details</h2>
-              <ul className="mt-4 space-y-3 text-sm text-neutral-700">
-                <li className="flex items-start gap-3">
-                  <Icon name="MapPin" size={18} className="mt-0.5 shrink-0 text-accent-600" />
-                  <span>{site.address}</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Icon name="Phone" size={18} className="shrink-0 text-accent-600" />
-                  <a href={site.phoneHref} className="hover:text-accent-700">
-                    {site.phone}
-                  </a>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Icon name="Mail" size={18} className="shrink-0 text-accent-600" />
-                  <a href={`mailto:${site.email}`} className="hover:text-accent-700">
-                    {site.email}
-                  </a>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Icon name="Clock" size={18} className="shrink-0 text-accent-600" />
-                  <span>{site.hours}</span>
-                </li>
-              </ul>
+            <div className="relative overflow-hidden rounded-xl border border-accent-500/30 p-6 shadow-card">
+              <div className="absolute inset-0 bg-[url('/images/service-card-bg.png')] bg-cover bg-top" />
+              <div className="absolute inset-0 bg-gradient-to-b from-surface/40 via-surface/85 to-surface" />
+              <div className="relative z-10">
+                <h2 className="text-lg font-semibold text-neutral-900">Contact Details</h2>
+                <ul className="mt-4 space-y-3 text-sm text-neutral-700">
+                  <li className="flex items-start gap-3">
+                    <Icon name="MapPin" size={18} className="mt-0.5 shrink-0 text-accent-600" />
+                    <span>{site.address}</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <Icon name="Phone" size={18} className="shrink-0 text-accent-600" />
+                    <a href={site.phoneHref} className="hover:text-accent-700">
+                      {site.phone}
+                    </a>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <Icon name="Mail" size={18} className="shrink-0 text-accent-600" />
+                    <a href={`mailto:${site.email}`} className="hover:text-accent-700">
+                      {site.email}
+                    </a>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <Icon name="Clock" size={18} className="shrink-0 text-accent-600" />
+                    <span>{site.hours}</span>
+                  </li>
+                </ul>
+              </div>
             </div>
 
             <a

@@ -1,5 +1,6 @@
 import Button from '../components/Button';
 import FaqAccordion from '../components/FaqAccordion';
+import Icon from '../components/Icon';
 import { buildMeta } from '../lib/meta';
 
 export const meta = ({ location }) =>
@@ -80,9 +81,13 @@ const faqGroups = [
 export default function Faq() {
   return (
     <>
-      <section className="border-b border-neutral-200 bg-neutral-50 py-12 lg:py-16">
-        <div className="container-page">
-          <h1 className="text-3xl font-extrabold text-neutral-900 sm:text-4xl">Frequently Asked Questions</h1>
+      <section className="relative overflow-hidden border-b border-neutral-200 bg-[url('/images/faq-bg-mobile.png')] bg-cover bg-center py-12 lg:bg-[url('/images/faq-bg.png')] lg:bg-cover lg:bg-center lg:py-16">
+        <div className="container-page relative z-10">
+          <p className="inline-flex items-center gap-2 rounded-full border border-accent-500/40 bg-accent-50 px-3 py-1 text-sm font-medium text-accent-600">
+            <Icon name="Sparkle" size={16} />
+            Frequently Asked
+          </p>
+          <h1 className="mt-4 font-display text-3xl font-extrabold text-neutral-900 sm:text-4xl">Frequently Asked Questions</h1>
           <p className="mt-4 max-w-2xl text-lg leading-7 text-neutral-600">
             Everything you need to know before booking a consultation. Can&apos;t find your answer? Reach out
             directly.
@@ -103,6 +108,7 @@ export default function Faq() {
 
       <section className="border-t border-neutral-200 bg-accent-50 py-12">
         <div className="container-page flex flex-col items-center gap-4 text-center">
+          <Icon name="MessageCircle" size={28} className="text-accent-600" />
           <h2 className="text-2xl font-bold text-neutral-900">Still have a question?</h2>
           <Button href="/contact" variant="primary" size="lg">
             Contact Us

@@ -1,8 +1,14 @@
 import { useParams } from 'react-router';
 import Button from '../components/Button';
 import AppLink from '../components/AppLink';
+import Icon from '../components/Icon';
 import { getBlogPost } from '../lib/content';
 import { buildMeta } from '../lib/meta';
+
+const postImage = {
+  'understanding-saturn-return': '/images/about-section-bg.png',
+  'signs-of-negative-energy-at-home': '/images/philosophy-bg.png',
+};
 
 export const meta = ({ location, params }) => {
   const post = params.slug ? getBlogPost(params.slug) : undefined;
@@ -11,7 +17,7 @@ export const meta = ({ location, params }) => {
     title: post.data.title,
     description: post.data.description,
     pathname: location.pathname,
-    image: post.data.image,
+    image: postImage[params.slug] ?? post.data.image,
   });
 };
 
@@ -32,7 +38,8 @@ export default function BlogPost() {
     );
   }
 
-  const { title, pubDate, image, imageAlt, author = 'Astro Vikesh Kumar' } = post.data;
+  const { title, pubDate, imageAlt, author = 'Astro Vikesh Kumar' } = post.data;
+  const image = (slug && postImage[slug]) ?? post.data.image;
   const parsedDate = new Date(pubDate);
 
   return (
@@ -59,12 +66,13 @@ export default function BlogPost() {
           alt={imageAlt}
           width={1200}
           height={675}
-          className="mt-8 w-full rounded-2xl border border-neutral-200 shadow-card"
+          className="mt-8 aspect-video w-full rounded-2xl border border-accent-500/30 object-cover shadow-card"
         />
 
         <div className="prose-content mt-8 max-w-none" dangerouslySetInnerHTML={{ __html: post.html }} />
 
         <div className="mt-10 flex flex-col items-center gap-4 rounded-xl border border-accent-200 bg-accent-50 p-8 text-center">
+          <Icon name="Sparkles" size={26} className="text-accent-600" />
           <h2 className="text-xl font-semibold text-neutral-900">Have a question about your own chart?</h2>
           <p className="max-w-md text-sm text-neutral-600">
             Book a consultation for guidance tailored specifically to your situation.

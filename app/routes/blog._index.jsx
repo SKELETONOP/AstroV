@@ -1,4 +1,5 @@
 import AppLink from '../components/AppLink';
+import Icon from '../components/Icon';
 import { blogPosts } from '../lib/content';
 import { buildMeta } from '../lib/meta';
 
@@ -11,6 +12,11 @@ export const meta = ({ location }) =>
 
 const dateFormatter = new Intl.DateTimeFormat('en-IN', { year: 'numeric', month: 'long', day: 'numeric' });
 
+const postImage = {
+  'understanding-saturn-return': '/images/about-section-bg.png',
+  'signs-of-negative-energy-at-home': '/images/philosophy-bg.png',
+};
+
 const posts = [...blogPosts].sort(
   (a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf(),
 );
@@ -18,9 +24,13 @@ const posts = [...blogPosts].sort(
 export default function BlogIndex() {
   return (
     <>
-      <section className="border-b border-neutral-200 bg-neutral-50 py-12 lg:py-16">
-        <div className="container-page">
-          <h1 className="text-3xl font-extrabold text-neutral-900 sm:text-4xl">Blog</h1>
+      <section className="relative overflow-hidden border-b border-neutral-200 bg-[url('/images/philosophy-bg-mobile.png')] bg-cover bg-center py-12 lg:bg-[url('/images/philosophy-bg.png')] lg:bg-cover lg:bg-center lg:py-16">
+        <div className="container-page relative z-10">
+          <p className="inline-flex items-center gap-2 rounded-full border border-accent-500/40 bg-accent-50 px-3 py-1 text-sm font-medium text-accent-600">
+            <Icon name="ScrollText" size={16} />
+            From the Blog
+          </p>
+          <h1 className="mt-4 font-display text-3xl font-extrabold text-neutral-900 sm:text-4xl">Blog</h1>
           <p className="mt-4 max-w-2xl text-lg leading-7 text-neutral-600">
             Practical, plain-language articles on astrology and spiritual guidance.
           </p>
@@ -32,10 +42,13 @@ export default function BlogIndex() {
           {posts.map((post) => {
             const pubDate = new Date(post.data.pubDate);
             return (
-              <article key={post.slug} className="flex flex-col overflow-hidden rounded-xl border border-neutral-200 bg-surface shadow-soft">
+              <article
+                key={post.slug}
+                className="flex flex-col overflow-hidden rounded-xl border border-accent-500/30 bg-surface shadow-card transition-transform hover:-translate-y-1"
+              >
                 <AppLink href={`/blog/${post.slug}`}>
                   <img
-                    src={post.data.image}
+                    src={postImage[post.slug] ?? post.data.image}
                     alt={post.data.imageAlt}
                     width={1200}
                     height={675}

@@ -1,4 +1,5 @@
 import AppLink from '../components/AppLink';
+import Icon from '../components/Icon';
 import cities from '../data/cities.json';
 import { blogPosts } from '../lib/content';
 import { buildMeta } from '../lib/meta';
@@ -24,9 +25,14 @@ const corePages = [
 export default function Sitemap() {
   return (
     <>
-      <section className="border-b border-neutral-200 bg-neutral-50 py-12 lg:py-16">
-        <div className="container-page">
-          <h1 className="text-3xl font-extrabold text-neutral-900 sm:text-4xl">Sitemap</h1>
+      <section className="relative overflow-hidden border-b border-neutral-200 bg-[url('/images/faq-bg-mobile.png')] bg-cover bg-center py-12 lg:bg-[url('/images/faq-bg.png')] lg:bg-cover lg:bg-center lg:py-16">
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-50/40 via-neutral-50/80 to-neutral-50" />
+        <div className="container-page relative z-10">
+          <p className="inline-flex items-center gap-2 rounded-full border border-accent-500/40 bg-accent-50 px-3 py-1 text-sm font-medium text-accent-600">
+            <Icon name="Compass" size={16} />
+            Explore
+          </p>
+          <h1 className="mt-4 font-display text-3xl font-extrabold text-neutral-900 sm:text-4xl">Sitemap</h1>
           <p className="mt-4 max-w-2xl text-lg leading-7 text-neutral-600">A complete list of every page on this website.</p>
         </div>
       </section>

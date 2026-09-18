@@ -25,7 +25,7 @@ export function Layout({ children }) {
         <Meta />
         <Links />
       </head>
-      <body className="flex min-h-screen flex-col">
+      <body className="flex min-h-screen flex-col" suppressHydrationWarning>
         <PageLoader />
         <a
           href="#main-content"

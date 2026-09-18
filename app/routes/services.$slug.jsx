@@ -20,6 +20,25 @@ export const meta = ({ location, params }) => {
   });
 };
 
+const categoryHeroBg = {
+  Astro: "bg-[url('/images/services-bg-mobile.png')] bg-cover bg-center lg:bg-[url('/images/services-bg.png')] lg:bg-cover lg:bg-center",
+  Vashikaran:
+    "bg-[url('/images/about-section-bg-mobile.png')] bg-cover bg-center lg:bg-[url('/images/about-section-bg.png')] lg:bg-cover lg:bg-center",
+  'Black Magic': "bg-[url('/images/stats-bg-mobile.png')] bg-cover bg-center lg:bg-[url('/images/stats-bg.png')] lg:bg-cover lg:bg-center",
+  Love: "bg-[url('/images/testimonials-bg-mobile.png')] bg-cover bg-center lg:bg-[url('/images/testimonials-bg.png')] lg:bg-cover lg:bg-center",
+  Family: "bg-[url('/images/philosophy-bg-mobile.png')] bg-cover bg-center lg:bg-[url('/images/philosophy-bg.png')] lg:bg-cover lg:bg-center",
+  Healing: "bg-[url('/images/faq-bg-mobile.png')] bg-cover bg-center lg:bg-[url('/images/faq-bg.png')] lg:bg-cover lg:bg-center",
+};
+
+const categoryImage = {
+  Astro: '/images/services-bg.png',
+  Vashikaran: '/images/about-section-bg.png',
+  'Black Magic': '/images/stats-bg.png',
+  Love: '/images/testimonials-bg.png',
+  Family: '/images/philosophy-bg.png',
+  Healing: '/images/faq-bg.png',
+};
+
 export default function ServiceDetail() {
   const { slug } = useParams();
   const service = slug ? getServicePage(slug) : undefined;
@@ -47,11 +66,15 @@ export default function ServiceDetail() {
   } = service.data;
 
   const related = allServices.filter((item) => item.slug !== slug).slice(0, 3);
+  const heroBgClass = categoryHeroBg[category] ?? categoryHeroBg.Astro;
+  const bannerImage = categoryImage[category] ?? categoryImage.Astro;
 
   return (
     <>
-      <section className="border-b border-neutral-200 bg-neutral-50 py-12 lg:py-16">
-        <div className="container-page">
+      <section
+        className={`relative overflow-hidden border-b border-neutral-200 py-12 lg:py-16 ${heroBgClass}`}
+      >
+        <div className="container-page relative z-10">
           <nav aria-label="Breadcrumb" className="mb-4 text-sm text-neutral-500">
             <AppLink href="/" className="hover:text-accent-700">
               Home
@@ -61,8 +84,11 @@ export default function ServiceDetail() {
             </span>
             <span className="text-neutral-700">{title}</span>
           </nav>
-          <p className="text-sm font-semibold uppercase tracking-wide text-accent-700">{category}</p>
-          <h1 className="mt-2 text-3xl font-extrabold text-neutral-900 sm:text-4xl">{title}</h1>
+          <p className="inline-flex items-center gap-2 rounded-full border border-accent-500/40 bg-accent-50 px-3 py-1 text-sm font-medium text-accent-600">
+            <Icon name="Sparkle" size={14} />
+            {category}
+          </p>
+          <h1 className="mt-3 font-display text-3xl font-extrabold text-neutral-900 sm:text-4xl">{title}</h1>
           <p className="mt-4 max-w-2xl text-lg leading-7 text-neutral-600">{description}</p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button href="/contact" variant="primary" size="md">
@@ -84,39 +110,47 @@ export default function ServiceDetail() {
         <div className="container-page grid gap-10 lg:grid-cols-3">
           <div className="lg:col-span-2">
             <img
-              src={image}
+              src={bannerImage}
               alt={imageAlt}
               width={900}
-              height={700}
-              className="mb-8 w-full rounded-2xl border border-neutral-200 shadow-card"
+              height={400}
+              className="mb-8 aspect-[21/9] w-full rounded-2xl border border-accent-500/30 object-cover shadow-card"
             />
             <div className="prose-content max-w-none" dangerouslySetInnerHTML={{ __html: service.html }} />
           </div>
 
           <aside className="space-y-6">
-            <div className="rounded-xl border border-neutral-200 bg-surface p-6 shadow-soft">
-              <h2 className="text-lg font-semibold text-neutral-900">Speak with Vikesh Kumar</h2>
-              <p className="mt-2 text-sm text-neutral-600">
-                Share your situation and receive clear, practical guidance tailored to your chart.
-              </p>
-              <Button href="/contact" variant="primary" size="md" className="mt-4 w-full">
-                Book a Consultation
-              </Button>
+            <div className="relative overflow-hidden rounded-xl border border-accent-500/30 p-6 shadow-card">
+              <div className="absolute inset-0 bg-[url('/images/service-card-bg.png')] bg-cover bg-top" />
+              <div className="absolute inset-0 bg-gradient-to-b from-surface/40 via-surface/85 to-surface" />
+              <div className="relative z-10">
+                <h2 className="text-lg font-semibold text-neutral-900">Speak with Vikesh Kumar</h2>
+                <p className="mt-2 text-sm text-neutral-600">
+                  Share your situation and receive clear, practical guidance tailored to your chart.
+                </p>
+                <Button href="/contact" variant="primary" size="md" className="mt-4 w-full">
+                  Book a Consultation
+                </Button>
+              </div>
             </div>
 
             {related.length > 0 && (
-              <div className="rounded-xl border border-neutral-200 bg-surface p-6 shadow-soft">
-                <h2 className="text-lg font-semibold text-neutral-900">Related Services</h2>
-                <ul className="mt-3 space-y-3">
-                  {related.map((item) => (
-                    <li key={item.slug}>
-                      <AppLink href={`/services/${item.slug}`} className="flex items-start gap-2 text-sm text-neutral-700 hover:text-accent-700">
-                        <Icon name={item.icon} size={16} className="mt-0.5 shrink-0 text-accent-600" />
-                        {item.title}
-                      </AppLink>
-                    </li>
-                  ))}
-                </ul>
+              <div className="relative overflow-hidden rounded-xl border border-accent-500/30 p-6 shadow-card">
+                <div className="absolute inset-0 bg-[url('/images/service-card-bg.png')] bg-cover bg-top" />
+                <div className="absolute inset-0 bg-gradient-to-b from-surface/40 via-surface/85 to-surface" />
+                <div className="relative z-10">
+                  <h2 className="text-lg font-semibold text-neutral-900">Related Services</h2>
+                  <ul className="mt-3 space-y-3">
+                    {related.map((item) => (
+                      <li key={item.slug}>
+                        <AppLink href={`/services/${item.slug}`} className="flex items-start gap-2 text-sm text-neutral-700 hover:text-accent-700">
+                          <Icon name={item.icon} size={16} className="mt-0.5 shrink-0 text-accent-600" />
+                          {item.title}
+                        </AppLink>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             )}
           </aside>
