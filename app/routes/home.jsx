@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import Button from "../components/Button";
 import Carousel from "../components/Carousel";
 import FaqAccordion from "../components/FaqAccordion";
@@ -112,11 +112,61 @@ const aboutHighlights = [
 ];
 
 export default function Home() {
+  const [heroGifSrc, setHeroGifSrc] = useState(null);
+  const [heroGifLoaded, setHeroGifLoaded] = useState(false);
+  const [heroMobileGifSrc, setHeroMobileGifSrc] = useState(null);
+  const [heroMobileGifLoaded, setHeroMobileGifLoaded] = useState(false);
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    if (prefersReducedMotion) return;
+
+    const connection =
+      navigator.connection ||
+      navigator.mozConnection ||
+      navigator.webkitConnection;
+    if (connection) {
+      const isSlow = ["slow-2g", "2g"].includes(connection.effectiveType);
+      if (connection.saveData || isSlow) return;
+    }
+
+    setHeroGifSrc("/images/hero-bg.gif");
+    setHeroMobileGifSrc("/images/hero-bg-mobile.gif");
+  }, []);
+
   return (
     <>
       {/* Hero */}
       <section className="relative h-screen overflow-hidden bg-neutral-50 lg:h-auto">
         <div className="absolute inset-0 bg-[url('/images/hero-bg-mobile.png')] bg-cover bg-[right_bottom] bg-no-repeat lg:bg-[url('/images/hero-bg.png')] lg:bg-[center_top]" />
+        {heroMobileGifSrc && (
+          <img
+            src={heroMobileGifSrc}
+            alt=""
+            aria-hidden="true"
+            loading="eager"
+            decoding="async"
+            onLoad={() => setHeroMobileGifLoaded(true)}
+            className={`absolute inset-0 block h-full w-full object-cover object-bottom-right transition-opacity duration-700 ease-out lg:hidden ${
+              heroMobileGifLoaded ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        )}
+        {heroGifSrc && (
+          <img
+            src={heroGifSrc}
+            alt=""
+            aria-hidden="true"
+            loading="eager"
+            decoding="async"
+            onLoad={() => setHeroGifLoaded(true)}
+            className={`absolute inset-0 hidden h-full w-full object-cover object-top transition-opacity duration-700 ease-out lg:block ${
+              heroGifLoaded ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        )}
         <div className="absolute inset-0 bg-gradient-to-b from-neutral-50/10 via-neutral-50/45 to-neutral-50/85 lg:hidden" />
         <div className="absolute inset-0 hidden from-neutral-50 via-neutral-50/85 to-neutral-50/20 lg:block" />
 
