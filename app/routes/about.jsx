@@ -1,3 +1,4 @@
+import AwardHighlight from '../components/AwardHighlight';
 import Button from '../components/Button';
 import Icon from '../components/Icon';
 import StatStrip from '../components/StatStrip';
@@ -110,6 +111,9 @@ export default function About() {
           <StatStrip stats={stats} />
         </div>
       </section>
+
+      {/* Award & recognition */}
+      <AwardHighlight />
 
       <section className="border-t border-neutral-200 bg-neutral-50 py-12 lg:py-16">
         <div className="container-page">

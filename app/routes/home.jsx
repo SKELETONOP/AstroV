@@ -1,4 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
+import AwardHighlight from "../components/AwardHighlight";
 import Button from "../components/Button";
 import Carousel from "../components/Carousel";
 import FaqAccordion from "../components/FaqAccordion";
@@ -119,7 +120,7 @@ export default function Home() {
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
+      "(prefers-reduced-motion: reduce)",
     ).matches;
     if (prefersReducedMotion) return;
 
@@ -379,6 +380,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Award & recognition */}
+      <AwardHighlight />
+
       {/* Testimonials carousel */}
       <section className="relative overflow-hidden border-t border-neutral-200 bg-[url('/images/testimonials-bg-mobile.png')] bg-cover bg-center py-16 lg:bg-[url('/images/testimonials-bg.png')] lg:bg-cover lg:bg-center lg:py-24">
         <div className="container-page relative z-10">
@@ -493,7 +497,7 @@ export default function Home() {
                 <Icon name="ArrowRight" size={16} />
               </Button>
 
-              <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-6 sm:divide-x sm:divide-accent-500/20">
+              <div className="mt-10 flex flex-nowrap items-center gap-x-6 gap-y-6 sm:divide-x sm:divide-accent-500/20">
                 {aboutHighlights.map((item) => (
                   <div
                     key={item.label}
@@ -521,13 +525,20 @@ export default function Home() {
           <div className="text-center">
             <div className="flex items-center justify-center gap-3">
               <span className="h-px w-16 bg-accent-500/30" />
-              <Icon name="Flower2" size={18} className="shrink-0 text-accent-600" />
+              <Icon
+                name="Flower2"
+                size={18}
+                className="shrink-0 text-accent-600"
+              />
               <span className="h-px w-16 bg-accent-500/30" />
             </div>
             <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-neutral-900 sm:text-4xl">
-              Frequently Asked <span className="text-accent-600">Questions</span>
+              Frequently Asked{" "}
+              <span className="text-accent-600">Questions</span>
             </h2>
-            <p className="mt-4 text-neutral-600">Answers to the questions we hear most often.</p>
+            <p className="mt-4 text-neutral-600">
+              Answers to the questions we hear most often.
+            </p>
           </div>
 
           <div className="mt-10">
@@ -537,7 +548,11 @@ export default function Home() {
           <div className="mt-10 flex items-center justify-center gap-4">
             <span className="hidden items-center gap-2 sm:flex">
               <span className="h-px w-16 bg-accent-500/30" />
-              <Icon name="Sparkle" size={10} className="shrink-0 text-accent-500/70" />
+              <Icon
+                name="Sparkle"
+                size={10}
+                className="shrink-0 text-accent-500/70"
+              />
             </span>
             <AppLink
               href="/faq"
@@ -547,7 +562,11 @@ export default function Home() {
               <Icon name="ArrowRight" size={14} />
             </AppLink>
             <span className="hidden items-center gap-2 sm:flex">
-              <Icon name="Sparkle" size={10} className="shrink-0 text-accent-500/70" />
+              <Icon
+                name="Sparkle"
+                size={10}
+                className="shrink-0 text-accent-500/70"
+              />
               <span className="h-px w-16 bg-accent-500/30" />
             </span>
           </div>

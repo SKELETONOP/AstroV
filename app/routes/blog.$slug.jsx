@@ -6,8 +6,8 @@ import { getBlogPost } from '../lib/content';
 import { buildMeta } from '../lib/meta';
 
 const postImage = {
-  'understanding-saturn-return': '/images/about-section-bg.png',
-  'signs-of-negative-energy-at-home': '/images/philosophy-bg.png',
+  'understanding-saturn-return': '/images/blog-saturn-return.png',
+  'signs-of-negative-energy-at-home': '/images/blog-negative-energy.png',
 };
 
 export const meta = ({ location, params }) => {

@@ -1,12 +1,1122 @@
 [
-  { "name": "Delhi", "slug": "delhi", "country": "India" },
-  { "name": "Mumbai", "slug": "mumbai", "country": "India" },
-  { "name": "Jaipur", "slug": "jaipur", "country": "India" },
-  { "name": "Bengaluru", "slug": "bengaluru", "country": "India" },
-  { "name": "Dubai", "slug": "dubai", "country": "UAE" },
-  { "name": "London", "slug": "london", "country": "United Kingdom" },
-  { "name": "Toronto", "slug": "toronto", "country": "Canada" },
-  { "name": "Sydney", "slug": "sydney", "country": "Australia" },
-  { "name": "Singapore", "slug": "singapore", "country": "Singapore" },
-  { "name": "New York", "slug": "new-york", "country": "United States" }
+  {
+    "name": "Delhi",
+    "slug": "delhi",
+    "country": "India"
+  },
+  {
+    "name": "Mumbai",
+    "slug": "mumbai",
+    "country": "India"
+  },
+  {
+    "name": "Jaipur",
+    "slug": "jaipur",
+    "country": "India"
+  },
+  {
+    "name": "Bengaluru",
+    "slug": "bengaluru",
+    "country": "India"
+  },
+  {
+    "name": "Dubai",
+    "slug": "dubai",
+    "country": "UAE"
+  },
+  {
+    "name": "London",
+    "slug": "london",
+    "country": "United Kingdom"
+  },
+  {
+    "name": "Toronto",
+    "slug": "toronto",
+    "country": "Canada"
+  },
+  {
+    "name": "Sydney",
+    "slug": "sydney",
+    "country": "Australia"
+  },
+  {
+    "name": "Singapore",
+    "slug": "singapore",
+    "country": "Singapore"
+  },
+  {
+    "name": "New York",
+    "slug": "new-york",
+    "country": "United States"
+  },
+  {
+    "name": "Abu Dhabi",
+    "slug": "abu-dhabi",
+    "country": "UAE"
+  },
+  {
+    "name": "Al Ain",
+    "slug": "al-ain",
+    "country": "UAE"
+  },
+  {
+    "name": "Amsterdam",
+    "slug": "amsterdam",
+    "country": "Netherlands"
+  },
+  {
+    "name": "Argentina",
+    "slug": "argentina",
+    "country": "Argentina"
+  },
+  {
+    "name": "Arusha",
+    "slug": "arusha",
+    "country": "Tanzania"
+  },
+  {
+    "name": "Auckland",
+    "slug": "auckland",
+    "country": "New Zealand"
+  },
+  {
+    "name": "Australia",
+    "slug": "australia",
+    "country": "Australia"
+  },
+  {
+    "name": "Bahrain",
+    "slug": "bahrain",
+    "country": "Bahrain"
+  },
+  {
+    "name": "Bangkok",
+    "slug": "bangkok",
+    "country": "Thailand"
+  },
+  {
+    "name": "Bangladesh",
+    "slug": "bangladesh",
+    "country": "Bangladesh"
+  },
+  {
+    "name": "Barcelona",
+    "slug": "barcelona",
+    "country": "Spain"
+  },
+  {
+    "name": "Berlin",
+    "slug": "berlin",
+    "country": "Germany"
+  },
+  {
+    "name": "Bhutan",
+    "slug": "bhutan",
+    "country": "Bhutan"
+  },
+  {
+    "name": "Birgunj",
+    "slug": "birgunj",
+    "country": "Nepal"
+  },
+  {
+    "name": "Birmingham",
+    "slug": "birmingham",
+    "country": "United Kingdom"
+  },
+  {
+    "name": "Brampton",
+    "slug": "brampton",
+    "country": "Canada"
+  },
+  {
+    "name": "Brisbane",
+    "slug": "brisbane",
+    "country": "Australia"
+  },
+  {
+    "name": "Buenos Aires",
+    "slug": "buenos-aires",
+    "country": "Argentina"
+  },
+  {
+    "name": "Calgary",
+    "slug": "calgary",
+    "country": "Canada"
+  },
+  {
+    "name": "Canada",
+    "slug": "canada",
+    "country": "Canada"
+  },
+  {
+    "name": "Cebu",
+    "slug": "cebu",
+    "country": "Philippines"
+  },
+  {
+    "name": "Chaguanas",
+    "slug": "chaguanas",
+    "country": "Trinidad and Tobago"
+  },
+  {
+    "name": "Chicago",
+    "slug": "chicago",
+    "country": "United States"
+  },
+  {
+    "name": "Chittagong",
+    "slug": "chittagong",
+    "country": "Bangladesh"
+  },
+  {
+    "name": "Colombo",
+    "slug": "colombo",
+    "country": "Sri Lanka"
+  },
+  {
+    "name": "Cordoba",
+    "slug": "cordoba",
+    "country": "Argentina"
+  },
+  {
+    "name": "Curepipe",
+    "slug": "curepipe",
+    "country": "Mauritius"
+  },
+  {
+    "name": "Dallas",
+    "slug": "dallas",
+    "country": "United States"
+  },
+  {
+    "name": "Dammam",
+    "slug": "dammam",
+    "country": "Saudi Arabia"
+  },
+  {
+    "name": "Dar es Salaam",
+    "slug": "dar-es-salaam",
+    "country": "Tanzania"
+  },
+  {
+    "name": "Dhaka",
+    "slug": "dhaka",
+    "country": "Bangladesh"
+  },
+  {
+    "name": "Doha",
+    "slug": "doha",
+    "country": "Qatar"
+  },
+  {
+    "name": "Durban",
+    "slug": "durban",
+    "country": "South Africa"
+  },
+  {
+    "name": "Fiji",
+    "slug": "fiji",
+    "country": "Fiji"
+  },
+  {
+    "name": "France",
+    "slug": "france",
+    "country": "France"
+  },
+  {
+    "name": "Frankfurt",
+    "slug": "frankfurt",
+    "country": "Germany"
+  },
+  {
+    "name": "Georgetown",
+    "slug": "georgetown",
+    "country": "Guyana"
+  },
+  {
+    "name": "Germany",
+    "slug": "germany",
+    "country": "Germany"
+  },
+  {
+    "name": "Gothenburg",
+    "slug": "gothenburg",
+    "country": "Sweden"
+  },
+  {
+    "name": "Guyana",
+    "slug": "guyana",
+    "country": "Guyana"
+  },
+  {
+    "name": "Haifa",
+    "slug": "haifa",
+    "country": "Israel"
+  },
+  {
+    "name": "Indonesia",
+    "slug": "indonesia",
+    "country": "Indonesia"
+  },
+  {
+    "name": "Israel",
+    "slug": "israel",
+    "country": "Israel"
+  },
+  {
+    "name": "Jaffna",
+    "slug": "jaffna",
+    "country": "Sri Lanka"
+  },
+  {
+    "name": "Jakarta",
+    "slug": "jakarta",
+    "country": "Indonesia"
+  },
+  {
+    "name": "Jamaica",
+    "slug": "jamaica",
+    "country": "Jamaica"
+  },
+  {
+    "name": "Jeddah",
+    "slug": "jeddah",
+    "country": "Saudi Arabia"
+  },
+  {
+    "name": "Johannesburg",
+    "slug": "johannesburg",
+    "country": "South Africa"
+  },
+  {
+    "name": "Johor Bahru",
+    "slug": "johor-bahru",
+    "country": "Malaysia"
+  },
+  {
+    "name": "Kampala",
+    "slug": "kampala",
+    "country": "Uganda"
+  },
+  {
+    "name": "Kathmandu",
+    "slug": "kathmandu",
+    "country": "Nepal"
+  },
+  {
+    "name": "Kenya",
+    "slug": "kenya",
+    "country": "Kenya"
+  },
+  {
+    "name": "Kingston",
+    "slug": "kingston",
+    "country": "Jamaica"
+  },
+  {
+    "name": "Kuala Lumpur",
+    "slug": "kuala-lumpur",
+    "country": "Malaysia"
+  },
+  {
+    "name": "Kuwait",
+    "slug": "kuwait",
+    "country": "Kuwait"
+  },
+  {
+    "name": "Lautoka",
+    "slug": "lautoka",
+    "country": "Fiji"
+  },
+  {
+    "name": "Leicester",
+    "slug": "leicester",
+    "country": "United Kingdom"
+  },
+  {
+    "name": "Lisbon",
+    "slug": "lisbon",
+    "country": "Portugal"
+  },
+  {
+    "name": "Lusaka",
+    "slug": "lusaka",
+    "country": "Zambia"
+  },
+  {
+    "name": "Madrid",
+    "slug": "madrid",
+    "country": "Spain"
+  },
+  {
+    "name": "Malaysia",
+    "slug": "malaysia",
+    "country": "Malaysia"
+  },
+  {
+    "name": "Maldives",
+    "slug": "maldives",
+    "country": "Maldives"
+  },
+  {
+    "name": "Male",
+    "slug": "male",
+    "country": "Maldives"
+  },
+  {
+    "name": "Manama",
+    "slug": "manama",
+    "country": "Bahrain"
+  },
+  {
+    "name": "Mandalay",
+    "slug": "mandalay",
+    "country": "Myanmar"
+  },
+  {
+    "name": "Manila",
+    "slug": "manila",
+    "country": "Philippines"
+  },
+  {
+    "name": "Marseille",
+    "slug": "marseille",
+    "country": "France"
+  },
+  {
+    "name": "Mauritius",
+    "slug": "mauritius",
+    "country": "Mauritius"
+  },
+  {
+    "name": "Medan",
+    "slug": "medan",
+    "country": "Indonesia"
+  },
+  {
+    "name": "Melbourne",
+    "slug": "melbourne",
+    "country": "Australia"
+  },
+  {
+    "name": "Mombasa",
+    "slug": "mombasa",
+    "country": "Kenya"
+  },
+  {
+    "name": "Munich",
+    "slug": "munich",
+    "country": "Germany"
+  },
+  {
+    "name": "Muscat",
+    "slug": "muscat",
+    "country": "Oman"
+  },
+  {
+    "name": "Myanmar",
+    "slug": "myanmar",
+    "country": "Myanmar"
+  },
+  {
+    "name": "Nadi",
+    "slug": "nadi",
+    "country": "Fiji"
+  },
+  {
+    "name": "Nairobi",
+    "slug": "nairobi",
+    "country": "Kenya"
+  },
+  {
+    "name": "Ndola",
+    "slug": "ndola",
+    "country": "Zambia"
+  },
+  {
+    "name": "Nepal",
+    "slug": "nepal",
+    "country": "Nepal"
+  },
+  {
+    "name": "Netherlands",
+    "slug": "netherlands",
+    "country": "Netherlands"
+  },
+  {
+    "name": "New Jersey",
+    "slug": "new-jersey",
+    "country": "United States"
+  },
+  {
+    "name": "New Zealand",
+    "slug": "new-zealand",
+    "country": "New Zealand"
+  },
+  {
+    "name": "Oman",
+    "slug": "oman",
+    "country": "Oman"
+  },
+  {
+    "name": "Paramaribo",
+    "slug": "paramaribo",
+    "country": "Suriname"
+  },
+  {
+    "name": "Paris",
+    "slug": "paris",
+    "country": "France"
+  },
+  {
+    "name": "Penang",
+    "slug": "penang",
+    "country": "Malaysia"
+  },
+  {
+    "name": "Perth",
+    "slug": "perth",
+    "country": "Australia"
+  },
+  {
+    "name": "Philippines",
+    "slug": "philippines",
+    "country": "Philippines"
+  },
+  {
+    "name": "Phuentsholing",
+    "slug": "phuentsholing",
+    "country": "Bhutan"
+  },
+  {
+    "name": "Phuket",
+    "slug": "phuket",
+    "country": "Thailand"
+  },
+  {
+    "name": "Port Louis",
+    "slug": "port-louis",
+    "country": "Mauritius"
+  },
+  {
+    "name": "Port of Spain",
+    "slug": "port-of-spain",
+    "country": "Trinidad and Tobago"
+  },
+  {
+    "name": "Porto",
+    "slug": "porto",
+    "country": "Portugal"
+  },
+  {
+    "name": "Portugal",
+    "slug": "portugal",
+    "country": "Portugal"
+  },
+  {
+    "name": "Qatar",
+    "slug": "qatar",
+    "country": "Qatar"
+  },
+  {
+    "name": "Riffa",
+    "slug": "riffa",
+    "country": "Bahrain"
+  },
+  {
+    "name": "Riyadh",
+    "slug": "riyadh",
+    "country": "Saudi Arabia"
+  },
+  {
+    "name": "Rotterdam",
+    "slug": "rotterdam",
+    "country": "Netherlands"
+  },
+  {
+    "name": "Salalah",
+    "slug": "salalah",
+    "country": "Oman"
+  },
+  {
+    "name": "San Francisco",
+    "slug": "san-francisco",
+    "country": "United States"
+  },
+  {
+    "name": "Saudi Arabia",
+    "slug": "saudi-arabia",
+    "country": "Saudi Arabia"
+  },
+  {
+    "name": "Sharjah",
+    "slug": "sharjah",
+    "country": "UAE"
+  },
+  {
+    "name": "South Africa",
+    "slug": "south-africa",
+    "country": "South Africa"
+  },
+  {
+    "name": "Spain",
+    "slug": "spain",
+    "country": "Spain"
+  },
+  {
+    "name": "Sri Lanka",
+    "slug": "sri-lanka",
+    "country": "Sri Lanka"
+  },
+  {
+    "name": "Stockholm",
+    "slug": "stockholm",
+    "country": "Sweden"
+  },
+  {
+    "name": "Suriname",
+    "slug": "suriname",
+    "country": "Suriname"
+  },
+  {
+    "name": "Suva",
+    "slug": "suva",
+    "country": "Fiji"
+  },
+  {
+    "name": "Sweden",
+    "slug": "sweden",
+    "country": "Sweden"
+  },
+  {
+    "name": "Tanzania",
+    "slug": "tanzania",
+    "country": "Tanzania"
+  },
+  {
+    "name": "Tel Aviv",
+    "slug": "tel-aviv",
+    "country": "Israel"
+  },
+  {
+    "name": "Thailand",
+    "slug": "thailand",
+    "country": "Thailand"
+  },
+  {
+    "name": "The Hague",
+    "slug": "the-hague",
+    "country": "Netherlands"
+  },
+  {
+    "name": "Thimphu",
+    "slug": "thimphu",
+    "country": "Bhutan"
+  },
+  {
+    "name": "Trinidad and Tobago",
+    "slug": "trinidad-and-tobago",
+    "country": "Trinidad and Tobago"
+  },
+  {
+    "name": "UAE",
+    "slug": "uae",
+    "country": "UAE"
+  },
+  {
+    "name": "Uganda",
+    "slug": "uganda",
+    "country": "Uganda"
+  },
+  {
+    "name": "UK",
+    "slug": "uk",
+    "country": "United Kingdom"
+  },
+  {
+    "name": "USA",
+    "slug": "usa",
+    "country": "United States"
+  },
+  {
+    "name": "Valencia",
+    "slug": "valencia",
+    "country": "Spain"
+  },
+  {
+    "name": "Vancouver",
+    "slug": "vancouver",
+    "country": "Canada"
+  },
+  {
+    "name": "Wellington",
+    "slug": "wellington",
+    "country": "New Zealand"
+  },
+  {
+    "name": "Yangon",
+    "slug": "yangon",
+    "country": "Myanmar"
+  },
+  {
+    "name": "Zambia",
+    "slug": "zambia",
+    "country": "Zambia"
+  },
+  {
+    "name": "Agartala",
+    "slug": "agartala",
+    "country": "India"
+  },
+  {
+    "name": "Agra",
+    "slug": "agra",
+    "country": "India"
+  },
+  {
+    "name": "Ahmedabad",
+    "slug": "ahmedabad",
+    "country": "India"
+  },
+  {
+    "name": "Amritsar",
+    "slug": "amritsar",
+    "country": "India"
+  },
+  {
+    "name": "Bahadurgarh",
+    "slug": "bahadurgarh",
+    "country": "India"
+  },
+  {
+    "name": "Bhiwadi",
+    "slug": "bhiwadi",
+    "country": "India"
+  },
+  {
+    "name": "Bhopal",
+    "slug": "bhopal",
+    "country": "India"
+  },
+  {
+    "name": "Bhubaneswar",
+    "slug": "bhubaneswar",
+    "country": "India"
+  },
+  {
+    "name": "Bihar",
+    "slug": "bihar",
+    "country": "India"
+  },
+  {
+    "name": "Bijnor",
+    "slug": "bijnor",
+    "country": "India"
+  },
+  {
+    "name": "Bikaner",
+    "slug": "bikaner",
+    "country": "India"
+  },
+  {
+    "name": "Chandigarh",
+    "slug": "chandigarh",
+    "country": "India"
+  },
+  {
+    "name": "Chennai",
+    "slug": "chennai",
+    "country": "India"
+  },
+  {
+    "name": "Coimbatore",
+    "slug": "coimbatore",
+    "country": "India"
+  },
+  {
+    "name": "Dehradun",
+    "slug": "dehradun",
+    "country": "India"
+  },
+  {
+    "name": "Faridabad",
+    "slug": "faridabad",
+    "country": "India"
+  },
+  {
+    "name": "Gandhinagar",
+    "slug": "gandhinagar",
+    "country": "India"
+  },
+  {
+    "name": "Gangtok",
+    "slug": "gangtok",
+    "country": "India"
+  },
+  {
+    "name": "Ghaziabad",
+    "slug": "ghaziabad",
+    "country": "India"
+  },
+  {
+    "name": "Goa",
+    "slug": "goa",
+    "country": "India"
+  },
+  {
+    "name": "Gujrat",
+    "slug": "gujrat",
+    "country": "India"
+  },
+  {
+    "name": "Gurdaspur",
+    "slug": "gurdaspur",
+    "country": "India"
+  },
+  {
+    "name": "Gurgaon",
+    "slug": "gurgaon",
+    "country": "India"
+  },
+  {
+    "name": "Guwahati",
+    "slug": "guwahati",
+    "country": "India"
+  },
+  {
+    "name": "Haridwar",
+    "slug": "haridwar",
+    "country": "India"
+  },
+  {
+    "name": "Haryana",
+    "slug": "haryana",
+    "country": "India"
+  },
+  {
+    "name": "Himachal Pradesh",
+    "slug": "himachal-pradesh",
+    "country": "India"
+  },
+  {
+    "name": "India",
+    "slug": "india",
+    "country": "India"
+  },
+  {
+    "name": "Indore",
+    "slug": "indore",
+    "country": "India"
+  },
+  {
+    "name": "Jharkhand",
+    "slug": "jharkhand",
+    "country": "India"
+  },
+  {
+    "name": "Jodhpur",
+    "slug": "jodhpur",
+    "country": "India"
+  },
+  {
+    "name": "Kanpur",
+    "slug": "kanpur",
+    "country": "India"
+  },
+  {
+    "name": "Karnal",
+    "slug": "karnal",
+    "country": "India"
+  },
+  {
+    "name": "Kerala",
+    "slug": "kerala",
+    "country": "India"
+  },
+  {
+    "name": "Kochi",
+    "slug": "kochi",
+    "country": "India"
+  },
+  {
+    "name": "Kolkata",
+    "slug": "kolkata",
+    "country": "India"
+  },
+  {
+    "name": "Lucknow",
+    "slug": "lucknow",
+    "country": "India"
+  },
+  {
+    "name": "Ludhiana",
+    "slug": "ludhiana",
+    "country": "India"
+  },
+  {
+    "name": "Madurai",
+    "slug": "madurai",
+    "country": "India"
+  },
+  {
+    "name": "Mangalore",
+    "slug": "mangalore",
+    "country": "India"
+  },
+  {
+    "name": "Manipur",
+    "slug": "manipur",
+    "country": "India"
+  },
+  {
+    "name": "Mathura",
+    "slug": "mathura",
+    "country": "India"
+  },
+  {
+    "name": "Meerut",
+    "slug": "meerut",
+    "country": "India"
+  },
+  {
+    "name": "Nagaland",
+    "slug": "nagaland",
+    "country": "India"
+  },
+  {
+    "name": "Nagpur",
+    "slug": "nagpur",
+    "country": "India"
+  },
+  {
+    "name": "Navi Mumbai",
+    "slug": "navi-mumbai",
+    "country": "India"
+  },
+  {
+    "name": "Odisha",
+    "slug": "odisha",
+    "country": "India"
+  },
+  {
+    "name": "Palwal",
+    "slug": "palwal",
+    "country": "India"
+  },
+  {
+    "name": "Panaji",
+    "slug": "panaji",
+    "country": "India"
+  },
+  {
+    "name": "Patna",
+    "slug": "patna",
+    "country": "India"
+  },
+  {
+    "name": "Pune",
+    "slug": "pune",
+    "country": "India"
+  },
+  {
+    "name": "Punjab",
+    "slug": "punjab",
+    "country": "India"
+  },
+  {
+    "name": "Raipur",
+    "slug": "raipur",
+    "country": "India"
+  },
+  {
+    "name": "Rajasthan",
+    "slug": "rajasthan",
+    "country": "India"
+  },
+  {
+    "name": "Ranchi",
+    "slug": "ranchi",
+    "country": "India"
+  },
+  {
+    "name": "Rishikesh",
+    "slug": "rishikesh",
+    "country": "India"
+  },
+  {
+    "name": "Rohtak",
+    "slug": "rohtak",
+    "country": "India"
+  },
+  {
+    "name": "Roorkee",
+    "slug": "roorkee",
+    "country": "India"
+  },
+  {
+    "name": "Shillong",
+    "slug": "shillong",
+    "country": "India"
+  },
+  {
+    "name": "Shimla",
+    "slug": "shimla",
+    "country": "India"
+  },
+  {
+    "name": "Sonipat",
+    "slug": "sonipat",
+    "country": "India"
+  },
+  {
+    "name": "Surat",
+    "slug": "surat",
+    "country": "India"
+  },
+  {
+    "name": "Udaipur",
+    "slug": "udaipur",
+    "country": "India"
+  },
+  {
+    "name": "Uttar Pradesh",
+    "slug": "uttar-pradesh",
+    "country": "India"
+  },
+  {
+    "name": "Uttarakhand",
+    "slug": "uttarakhand",
+    "country": "India"
+  },
+  {
+    "name": "Vadodara",
+    "slug": "vadodara",
+    "country": "India"
+  },
+  {
+    "name": "Varanasi",
+    "slug": "varanasi",
+    "country": "India"
+  },
+  {
+    "name": "North Delhi",
+    "slug": "north-delhi",
+    "country": "India"
+  },
+  {
+    "name": "Ashok Vihar",
+    "slug": "ashok-vihar",
+    "country": "India"
+  },
+  {
+    "name": "Lawrence Road",
+    "slug": "lawrence-road",
+    "country": "India"
+  },
+  {
+    "name": "Model Town",
+    "slug": "model-town",
+    "country": "India"
+  },
+  {
+    "name": "Shalimar Bagh",
+    "slug": "shalimar-bagh",
+    "country": "India"
+  },
+  {
+    "name": "Rohini",
+    "slug": "rohini",
+    "country": "India"
+  },
+  {
+    "name": "Pitampura",
+    "slug": "pitampura",
+    "country": "India"
+  },
+  {
+    "name": "South Delhi",
+    "slug": "south-delhi",
+    "country": "India"
+  },
+  {
+    "name": "Green Park",
+    "slug": "green-park",
+    "country": "India"
+  },
+  {
+    "name": "Uday Park",
+    "slug": "uday-park",
+    "country": "India"
+  },
+  {
+    "name": "Vasant Vihar",
+    "slug": "vasant-vihar",
+    "country": "India"
+  },
+  {
+    "name": "Lajpat Nagar",
+    "slug": "lajpat-nagar",
+    "country": "India"
+  },
+  {
+    "name": "East Delhi",
+    "slug": "east-delhi",
+    "country": "India"
+  },
+  {
+    "name": "Preet Vihar",
+    "slug": "preet-vihar",
+    "country": "India"
+  },
+  {
+    "name": "Mayur Vihar",
+    "slug": "mayur-vihar",
+    "country": "India"
+  },
+  {
+    "name": "West Delhi",
+    "slug": "west-delhi",
+    "country": "India"
+  },
+  {
+    "name": "Paschim Vihar",
+    "slug": "paschim-vihar",
+    "country": "India"
+  },
+  {
+    "name": "Punjabi Bagh",
+    "slug": "punjabi-bagh",
+    "country": "India"
+  },
+  {
+    "name": "Moti Nagar",
+    "slug": "moti-nagar",
+    "country": "India"
+  },
+  {
+    "name": "Janakpuri",
+    "slug": "janakpuri",
+    "country": "India"
+  },
+  {
+    "name": "Rajouri Garden",
+    "slug": "rajouri-garden",
+    "country": "India"
+  },
+  {
+    "name": "Patel Nagar",
+    "slug": "patel-nagar",
+    "country": "India"
+  },
+  {
+    "name": "Connaught Place",
+    "slug": "connaught-place",
+    "country": "India"
+  },
+  {
+    "name": "Karol Bag",
+    "slug": "karol-bag",
+    "country": "India"
+  }
 ]

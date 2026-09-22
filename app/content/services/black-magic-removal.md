@@ -3,7 +3,7 @@ title: "Black Magic Removal"
 category: "Black Magic"
 description: "Identify and remove negative energy affecting health, finances or relationships with protective, traditional remedies."
 image: "/images/services/black-magic-removal.svg"
-imageAlt: "Abstract illustration representing protection and clearing of negative energy"
+imageAlt: "Pandit Vikesh Kumar seated at his desk in a study dedicated to black magic removal and spiritual protection"
 order: 3
 ---
 

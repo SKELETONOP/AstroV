@@ -1,0 +1,414 @@
+<!--
+  EmailJS template — "New Contact Form Submission"
+  Paste this into EmailJS: Email Templates → your template → Code editor (</> icon).
+  Variables used below must match the form field names in app/routes/contact.jsx:
+    {{name}} {{phone}} {{email}} {{message}}
+  In the template's Settings tab, set "To email" to vikeshastro@gmail.com
+  and "Reply To" to {{email}} so replying goes straight to the visitor.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>New Contact Form Submission</title>
+    <!--[if mso]>
+    <noscript>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml>
+    </noscript>
+    <![endif]-->
+    <style>
+      body,
+      table,
+      td {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100% !important;
+        background-color: #0b0e1c;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      img {
+        border: 0;
+        line-height: 100%;
+        outline: none;
+        text-decoration: none;
+      }
+      a {
+        text-decoration: none;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .email-container {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+        .email-padding {
+          padding-left: 20px !important;
+          padding-right: 20px !important;
+        }
+        .stack-buttons td {
+          display: block !important;
+          width: 100% !important;
+          padding: 0 0 10px 0 !important;
+        }
+        .stack-buttons a {
+          display: block !important;
+          text-align: center !important;
+        }
+        .h1 {
+          font-size: 20px !important;
+        }
+      }
+    </style>
+  </head>
+  <body style="margin: 0; padding: 0; background-color: #0b0e1c">
+    <table
+      role="presentation"
+      width="100%"
+      cellpadding="0"
+      cellspacing="0"
+      style="background-color: #0b0e1c"
+    >
+      <tr>
+        <td align="center" style="padding: 32px 16px">
+          <table
+            role="presentation"
+            width="600"
+            cellpadding="0"
+            cellspacing="0"
+            class="email-container"
+            style="width: 600px; max-width: 600px"
+          >
+            <!-- Header -->
+            <tr>
+              <td
+                align="center"
+                class="email-padding"
+                style="
+                  background-color: #151c36;
+                  border: 1px solid #2a3357;
+                  border-bottom: none;
+                  border-radius: 12px 12px 0 0;
+                  padding: 28px 32px 22px;
+                "
+              >
+                <div
+                  style="
+                    font-family: Georgia, 'Times New Roman', serif;
+                    font-size: 22px;
+                    color: #d4a24e;
+                    letter-spacing: 0.5px;
+                  "
+                >
+                  &#9770; Astro Vikesh Kumar
+                </div>
+                <div
+                  style="
+                    margin-top: 4px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 12px;
+                    color: #8d93b3;
+                    text-transform: uppercase;
+                    letter-spacing: 1.5px;
+                  "
+                >
+                  Astrology &amp; Spiritual Consultation
+                </div>
+              </td>
+            </tr>
+
+            <!-- Title band -->
+            <tr>
+              <td
+                class="email-padding"
+                style="
+                  background-color: #151c36;
+                  border-left: 1px solid #2a3357;
+                  border-right: 1px solid #2a3357;
+                  padding: 8px 32px 24px;
+                "
+              >
+                <h1
+                  class="h1"
+                  style="
+                    margin: 0;
+                    font-family: Georgia, 'Times New Roman', serif;
+                    font-size: 24px;
+                    font-weight: bold;
+                    color: #f7f1e3;
+                  "
+                >
+                  New Contact Form Submission
+                </h1>
+                <p
+                  style="
+                    margin: 8px 0 0;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: #b9bdd1;
+                  "
+                >
+                  Someone reached out through the contact form on the website.
+                </p>
+              </td>
+            </tr>
+
+            <!-- Details card -->
+            <tr>
+              <td
+                class="email-padding"
+                style="
+                  background-color: #151c36;
+                  border-left: 1px solid #2a3357;
+                  border-right: 1px solid #2a3357;
+                  padding: 0 32px 8px;
+                "
+              >
+                <table
+                  role="presentation"
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  style="
+                    background-color: #10142a;
+                    border: 1px solid #2a3357;
+                    border-radius: 10px;
+                  "
+                >
+                  <tr>
+                    <td style="padding: 20px 24px">
+                      <table
+                        role="presentation"
+                        width="100%"
+                        cellpadding="0"
+                        cellspacing="0"
+                      >
+                        <tr>
+                          <td style="padding-bottom: 14px">
+                            <div
+                              style="
+                                font-family: Arial, Helvetica, sans-serif;
+                                font-size: 11px;
+                                font-weight: bold;
+                                text-transform: uppercase;
+                                letter-spacing: 1px;
+                                color: #d4a24e;
+                              "
+                            >
+                              Name
+                            </div>
+                            <div
+                              style="
+                                margin-top: 4px;
+                                font-family: Arial, Helvetica, sans-serif;
+                                font-size: 15px;
+                                color: #f7f1e3;
+                              "
+                            >
+                              {{name}}
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            style="
+                              padding-bottom: 14px;
+                              border-top: 1px solid #2a3357;
+                              padding-top: 14px;
+                            "
+                          >
+                            <div
+                              style="
+                                font-family: Arial, Helvetica, sans-serif;
+                                font-size: 11px;
+                                font-weight: bold;
+                                text-transform: uppercase;
+                                letter-spacing: 1px;
+                                color: #d4a24e;
+                              "
+                            >
+                              Phone
+                            </div>
+                            <div
+                              style="
+                                margin-top: 4px;
+                                font-family: Arial, Helvetica, sans-serif;
+                                font-size: 15px;
+                                color: #f7f1e3;
+                              "
+                            >
+                              <a href="tel:{{phone}}" style="color: #f7f1e3">{{phone}}</a>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            style="
+                              padding-bottom: 14px;
+                              border-top: 1px solid #2a3357;
+                              padding-top: 14px;
+                            "
+                          >
+                            <div
+                              style="
+                                font-family: Arial, Helvetica, sans-serif;
+                                font-size: 11px;
+                                font-weight: bold;
+                                text-transform: uppercase;
+                                letter-spacing: 1px;
+                                color: #d4a24e;
+                              "
+                            >
+                              Email
+                            </div>
+                            <div
+                              style="
+                                margin-top: 4px;
+                                font-family: Arial, Helvetica, sans-serif;
+                                font-size: 15px;
+                                color: #f7f1e3;
+                              "
+                            >
+                              <a href="mailto:{{email}}" style="color: #f7f1e3">{{email}}</a>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            style="border-top: 1px solid #2a3357; padding-top: 14px"
+                          >
+                            <div
+                              style="
+                                font-family: Arial, Helvetica, sans-serif;
+                                font-size: 11px;
+                                font-weight: bold;
+                                text-transform: uppercase;
+                                letter-spacing: 1px;
+                                color: #d4a24e;
+                              "
+                            >
+                              Message
+                            </div>
+                            <div
+                              style="
+                                margin-top: 4px;
+                                font-family: Arial, Helvetica, sans-serif;
+                                font-size: 15px;
+                                line-height: 22px;
+                                color: #f7f1e3;
+                                white-space: pre-wrap;
+                              "
+                            >
+                              {{message}}
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- CTA buttons -->
+            <tr>
+              <td
+                class="email-padding"
+                style="
+                  background-color: #151c36;
+                  border-left: 1px solid #2a3357;
+                  border-right: 1px solid #2a3357;
+                  padding: 24px 32px 28px;
+                "
+              >
+                <table
+                  role="presentation"
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  class="stack-buttons"
+                >
+                  <tr>
+                    <td width="50%" align="center" style="padding-right: 8px">
+                      <a
+                        href="mailto:{{email}}"
+                        style="
+                          display: block;
+                          background-color: #d4a24e;
+                          color: #0b0e1c;
+                          font-family: Arial, Helvetica, sans-serif;
+                          font-size: 14px;
+                          font-weight: bold;
+                          padding: 12px 20px;
+                          border-radius: 8px;
+                        "
+                        >Reply by Email</a
+                      >
+                    </td>
+                    <td width="50%" align="center" style="padding-left: 8px">
+                      <a
+                        href="tel:{{phone}}"
+                        style="
+                          display: block;
+                          background-color: transparent;
+                          color: #d4a24e;
+                          font-family: Arial, Helvetica, sans-serif;
+                          font-size: 14px;
+                          font-weight: bold;
+                          padding: 11px 20px;
+                          border-radius: 8px;
+                          border: 1px solid #d4a24e;
+                        "
+                        >Call {{name}}</a
+                      >
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Footer -->
+            <tr>
+              <td
+                align="center"
+                class="email-padding"
+                style="
+                  background-color: #10142a;
+                  border: 1px solid #2a3357;
+                  border-top: none;
+                  border-radius: 0 0 12px 12px;
+                  padding: 18px 32px;
+                "
+              >
+                <p
+                  style="
+                    margin: 0;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 12px;
+                    line-height: 18px;
+                    color: #7a81a0;
+                  "
+                >
+                  This message was sent from the contact form on
+                  astrovikeshkumar.com. Reply directly to this email to reach
+                  {{name}}.
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

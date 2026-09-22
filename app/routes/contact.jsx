@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import Button from '../components/Button';
 import Icon from '../components/Icon';
 import site from '../data/site.json';
@@ -58,18 +59,20 @@ export default function Contact() {
 
     if (!validateForm(form)) return;
 
-    setStatus('submitting');
     const formData = new FormData(form);
+    if (String(formData.get('bot-field') ?? '')) return;
+
+    setStatus('submitting');
 
     try {
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData).toString(),
-      });
-
-      if (!response.ok) throw new Error('Form submission failed');
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form,
+        { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
+      );
       setStatus('success');
+      form.reset();
     } catch {
       setStatus('error');
     }
@@ -162,14 +165,10 @@ export default function Contact() {
                   <form
                     ref={formRef}
                     name="contact"
-                    method="POST"
-                    data-netlify="true"
                     className="space-y-5"
                     noValidate
                     onSubmit={handleSubmit}
-                    {...{ 'netlify-honeypot': 'bot-field' }}
                   >
-                    <input type="hidden" name="form-name" value="contact" />
                     <p className="hidden">
                       <label>
                         Don&apos;t fill this out if you&apos;re human:{' '}

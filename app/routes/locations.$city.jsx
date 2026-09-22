@@ -101,22 +101,15 @@ export default function LocationCity() {
             </ul>
           </div>
 
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-accent-500/30 shadow-card">
-            <div className="absolute inset-0 bg-[url('/images/about-section-bg.png')] bg-cover bg-center" />
-            <div className="absolute inset-0 bg-gradient-to-t from-surface/70 via-surface/20 to-transparent" />
-            <div
-              className="relative z-10 flex h-full w-full flex-col items-center justify-center text-center text-sm text-neutral-500"
-              role="img"
-              aria-label={`Map placeholder showing ${city.name}, ${city.country}`}
-            >
-              <span className="flex h-14 w-14 items-center justify-center rounded-full border border-accent-500/50 bg-surface/60 text-accent-600">
-                <Icon name="MapPin" size={26} />
-              </span>
-              <p className="mt-3 font-display text-lg font-semibold text-neutral-900">
-                {city.name}, {city.country}
-              </p>
-              <p className="mt-1 text-xs text-neutral-400">Map embed placeholder — query: {mapQuery}</p>
-            </div>
+          <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl border border-accent-500/30 shadow-card">
+            <iframe
+              title={`Map showing ${city.name}, ${city.country}`}
+              src={`https://www.google.com/maps?q=${mapQuery}&output=embed`}
+              className="absolute inset-0 h-full w-full border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
           </div>
         </div>
       </section>

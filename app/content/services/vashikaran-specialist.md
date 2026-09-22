@@ -3,7 +3,7 @@ title: "Vashikaran Specialist"
 category: "Vashikaran"
 description: "Ethical, traditional vashikaran remedies from an experienced specialist to help resolve relationship and life obstacles."
 image: "/images/services/vashikaran-specialist.svg"
-imageAlt: "Abstract illustration representing balance and connection"
+imageAlt: "Pandit Vikesh Kumar seated at his desk in a study dedicated to vashikaran and relationship guidance"
 order: 2
 ---
 

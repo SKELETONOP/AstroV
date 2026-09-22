@@ -3,7 +3,7 @@ title: "Spiritual Healing"
 category: "Healing"
 description: "Energy-balancing remedies to relieve stress, anxiety and a sense of being stuck, restoring calm and momentum."
 image: "/images/services/spiritual-healing.svg"
-imageAlt: "Abstract illustration representing calm, balance and renewal"
+imageAlt: "Pandit Vikesh Kumar seated at his desk in a study dedicated to spiritual healing and inner balance"
 order: 7
 ---
 

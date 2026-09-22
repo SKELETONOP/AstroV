@@ -3,7 +3,7 @@ title: "5 Signs of Negative Energy in Your Home"
 description: "Practical, non-alarmist signs worth checking before assuming a run of bad luck is just coincidence."
 pubDate: 2026-02-20
 image: "/images/blog/blog-2.svg"
-imageAlt: "Abstract illustration representing a home surrounded by shifting energy"
+imageAlt: "Pandit Vikesh Kumar seated at home, illustrating the 5 signs of negative energy in your home"
 author: "Vikesh Kumar"
 ---
 

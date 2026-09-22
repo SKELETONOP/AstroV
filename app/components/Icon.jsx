@@ -33,6 +33,7 @@ import {
   Sun,
   MoonStar,
   Infinity,
+  Award,
 } from 'lucide-react';
 
 const icons = {
@@ -70,6 +71,7 @@ const icons = {
   Sun,
   MoonStar,
   Infinity,
+  Award,
 };
 
 export default function Icon({ name, size = 20, strokeWidth = 1.75, ...rest }) {

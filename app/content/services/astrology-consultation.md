@@ -3,7 +3,7 @@ title: "Astrology Consultation"
 category: "Astro"
 description: "Detailed birth chart analysis and personalised guidance on career, health, marriage and life direction from Pandit Vikesh Kumar."
 image: "/images/services/astrology-consultation.svg"
-imageAlt: "Abstract illustration representing a birth chart consultation"
+imageAlt: "Pandit Vikesh Kumar seated at his desk with a birth chart, under a starry night sky"
 order: 1
 ---
 

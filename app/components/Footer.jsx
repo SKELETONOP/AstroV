@@ -1,12 +1,13 @@
+import { useState } from 'react';
 import Button from './Button';
 import cities from '../data/cities.json';
 import site from '../data/site.json';
 import AppLink from './AppLink';
 import Icon from './Icon';
+import LocationsModal from './LocationsModal';
 import SocialIcon from './SocialIcon';
 
 const visibleCities = cities.slice(0, 6);
-const moreCities = cities.slice(6);
 
 const secondaryNav = [
   { label: 'About Us', href: '/about' },
@@ -33,6 +34,7 @@ const contactItems = [
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const [locationsOpen, setLocationsOpen] = useState(false);
 
   return (
     <footer className="relative overflow-hidden border-t border-neutral-200 bg-[url('/images/footer-bg-mobile.png')] bg-cover bg-top lg:bg-[url('/images/footer-bg.png')] lg:bg-cover lg:bg-top">
@@ -123,24 +125,14 @@ export default function Footer() {
               ))}
             </ul>
 
-            {moreCities.length > 0 && (
-              <details className="group mt-4">
-                <summary className="flex w-fit cursor-pointer list-none items-center gap-2 rounded-full border border-accent-500/50 px-4 py-2 text-xs font-semibold text-accent-600 hover:bg-accent-50/10">
-                  <span className="group-open:hidden">Show more cities</span>
-                  <span className="hidden group-open:inline">Show fewer cities</span>
-                  <Icon name="ChevronDown" size={14} className="transition-transform group-open:rotate-180" />
-                </summary>
-                <ul className="mt-3 grid grid-cols-2 gap-x-6 gap-y-3 text-sm text-neutral-700">
-                  {moreCities.map((city) => (
-                    <li key={city.slug}>
-                      <AppLink href={`/locations/${city.slug}`} className="hover:text-accent-700">
-                        {city.name}
-                      </AppLink>
-                    </li>
-                  ))}
-                </ul>
-              </details>
-            )}
+            <button
+              type="button"
+              onClick={() => setLocationsOpen(true)}
+              className="mt-4 flex w-fit items-center gap-2 rounded-full border border-accent-500/50 px-4 py-2 text-xs font-semibold text-accent-600 hover:bg-accent-50/10"
+            >
+              View more ({cities.length})
+              <Icon name="ArrowRight" size={14} />
+            </button>
           </div>
 
           {/* Explore + Cities — mobile accordions */}
@@ -167,7 +159,7 @@ export default function Footer() {
                 <Icon name="Plus" size={16} className="text-accent-600 transition-transform group-open:rotate-45" />
               </summary>
               <ul className="mt-4 grid grid-cols-2 gap-x-6 gap-y-3 text-sm text-neutral-700">
-                {cities.map((city) => (
+                {visibleCities.map((city) => (
                   <li key={city.slug}>
                     <AppLink href={`/locations/${city.slug}`} className="hover:text-accent-700">
                       {city.name}
@@ -175,6 +167,14 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
+              <button
+                type="button"
+                onClick={() => setLocationsOpen(true)}
+                className="mx-auto mt-4 flex w-fit items-center gap-2 rounded-full border border-accent-500/50 px-4 py-2 text-xs font-semibold text-accent-600 hover:bg-accent-50/10"
+              >
+                View more ({cities.length})
+                <Icon name="ArrowRight" size={14} />
+              </button>
             </details>
           </div>
 
@@ -222,6 +222,8 @@ export default function Footer() {
           </p>
         </div>
       </div>
+
+      <LocationsModal open={locationsOpen} onClose={() => setLocationsOpen(false)} cities={cities} />
     </footer>
   );
 }

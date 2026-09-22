@@ -3,7 +3,7 @@ title: "Inter-Caste Love Marriage"
 category: "Love"
 description: "Support in easing family resistance and building consensus around an inter-caste or inter-religion love marriage."
 image: "/images/services/inter-caste-love-marriage.svg"
-imageAlt: "Abstract illustration representing two paths joining into one"
+imageAlt: "Pandit Vikesh Kumar seated at his desk, offering guidance for inter-caste love marriage and family approval"
 order: 5
 ---
 

@@ -3,7 +3,7 @@ title: "Understanding Your Saturn Return"
 description: "Why life feels heavier every 27 to 29 years, and how to work with a Saturn return instead of against it."
 pubDate: 2026-01-15
 image: "/images/blog/blog-1.svg"
-imageAlt: "Abstract illustration representing a long, cyclical planetary orbit"
+imageAlt: "Pandit Vikesh Kumar seated at his desk beside a starfield illustration of Saturn, for Understanding Your Saturn Return"
 author: "Vikesh Kumar"
 ---
 

@@ -13,8 +13,8 @@ export const meta = ({ location }) =>
 const dateFormatter = new Intl.DateTimeFormat('en-IN', { year: 'numeric', month: 'long', day: 'numeric' });
 
 const postImage = {
-  'understanding-saturn-return': '/images/about-section-bg.png',
-  'signs-of-negative-energy-at-home': '/images/philosophy-bg.png',
+  'understanding-saturn-return': '/images/blog-saturn-return.png',
+  'signs-of-negative-energy-at-home': '/images/blog-negative-energy.png',
 };
 
 const posts = [...blogPosts].sort(

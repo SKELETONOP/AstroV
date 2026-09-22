@@ -31,12 +31,17 @@ const categoryHeroBg = {
 };
 
 const categoryImage = {
-  Astro: '/images/services-bg.png',
-  Vashikaran: '/images/about-section-bg.png',
-  'Black Magic': '/images/stats-bg.png',
+  Astro: '/images/services-astrology-banner.png',
+  Vashikaran: '/images/services-vashikaran-banner.png',
+  'Black Magic': '/images/services-black-magic-banner.png',
   Love: '/images/testimonials-bg.png',
-  Family: '/images/philosophy-bg.png',
-  Healing: '/images/faq-bg.png',
+  Family: '/images/services-divorce-banner.png',
+  Healing: '/images/services-spiritual-healing-banner.png',
+};
+
+const serviceImage = {
+  'love-problem-solution': '/images/services-love-problem-banner.png',
+  'inter-caste-love-marriage': '/images/services-intercaste-love-banner.png',
 };
 
 export default function ServiceDetail() {
@@ -67,7 +72,7 @@ export default function ServiceDetail() {
 
   const related = allServices.filter((item) => item.slug !== slug).slice(0, 3);
   const heroBgClass = categoryHeroBg[category] ?? categoryHeroBg.Astro;
-  const bannerImage = categoryImage[category] ?? categoryImage.Astro;
+  const bannerImage = serviceImage[slug] ?? categoryImage[category] ?? categoryImage.Astro;
 
   return (
     <>

@@ -3,7 +3,7 @@ title: "Divorce Problem Solution"
 category: "Family"
 description: "Remedies and guidance aimed at restoring understanding between partners and avoiding an unnecessary separation."
 image: "/images/services/divorce-problem-solution.svg"
-imageAlt: "Abstract illustration representing two separate paths reconnecting"
+imageAlt: "Pandit Vikesh Kumar seated at his desk, offering guidance for divorce and relationship separation problems"
 order: 6
 ---
 

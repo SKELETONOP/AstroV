@@ -3,7 +3,7 @@ title: "Love Problem Solution"
 category: "Love"
 description: "Practical, respectful guidance to resolve misunderstandings, rebuild trust and strengthen a loving relationship."
 image: "/images/services/love-problem-solution.svg"
-imageAlt: "Abstract illustration representing two connected paths coming together"
+imageAlt: "Pandit Vikesh Kumar seated in a lounge overlooking the city skyline at sunset, offering love and relationship guidance"
 order: 4
 ---
 
