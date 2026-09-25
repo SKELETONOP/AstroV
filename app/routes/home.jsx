@@ -497,11 +497,11 @@ export default function Home() {
                 <Icon name="ArrowRight" size={16} />
               </Button>
 
-              <div className="mt-10 flex flex-nowrap items-center gap-x-6 gap-y-6 sm:divide-x sm:divide-accent-500/20">
+              <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-6 lg:flex lg:flex-nowrap lg:items-center lg:divide-x lg:divide-accent-500/20">
                 {aboutHighlights.map((item) => (
                   <div
                     key={item.label}
-                    className="flex items-center gap-3 sm:pl-6 sm:first:pl-0"
+                    className="flex items-center gap-3 lg:pl-6 lg:first:pl-0"
                   >
                     <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-accent-500/50 text-accent-600">
                       <Icon name={item.icon} size={18} />
