@@ -112,11 +112,44 @@ const aboutHighlights = [
   { icon: "Sun", label: "Practical", caption: "Solutions" },
 ];
 
+// Decorative background video. Always muted: the `muted` prop alone isn't
+// reliably applied by React, so it's also forced on the element, and any
+// attempt to unmute (e.g. via the browser's context menu) is reverted.
+function HeroVideo({ src, onReady, className }) {
+  const forceMute = (video) => {
+    if (!video) return;
+    video.defaultMuted = true;
+    video.muted = true;
+    video.volume = 0;
+  };
+
+  return (
+    <video
+      ref={forceMute}
+      src={src}
+      autoPlay
+      muted
+      loop
+      playsInline
+      disablePictureInPicture
+      disableRemotePlayback
+      preload="auto"
+      aria-hidden="true"
+      tabIndex={-1}
+      onVolumeChange={(e) => {
+        if (!e.currentTarget.muted) forceMute(e.currentTarget);
+      }}
+      onLoadedData={onReady}
+      className={`pointer-events-none absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ease-out ${className}`}
+    />
+  );
+}
+
 export default function Home() {
-  const [heroGifSrc, setHeroGifSrc] = useState(null);
-  const [heroGifLoaded, setHeroGifLoaded] = useState(false);
-  const [heroMobileGifSrc, setHeroMobileGifSrc] = useState(null);
-  const [heroMobileGifLoaded, setHeroMobileGifLoaded] = useState(false);
+  const [heroVideoSrc, setHeroVideoSrc] = useState(null);
+  const [heroVideoLoaded, setHeroVideoLoaded] = useState(false);
+  const [heroMobileVideoSrc, setHeroMobileVideoSrc] = useState(null);
+  const [heroMobileVideoLoaded, setHeroMobileVideoLoaded] = useState(false);
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
@@ -133,38 +166,34 @@ export default function Home() {
       if (connection.saveData || isSlow) return;
     }
 
-    setHeroGifSrc("/images/hero-bg.gif");
-    setHeroMobileGifSrc("/images/hero-bg-mobile.gif");
+    // Only fetch the video that matches the current viewport (lg breakpoint).
+    if (window.matchMedia("(min-width: 1024px)").matches) {
+      setHeroVideoSrc("/images/hero-bg.mp4");
+    } else {
+      setHeroMobileVideoSrc("/images/hero-bg-mobile.mp4");
+    }
   }, []);
 
   return (
     <>
       {/* Hero */}
       <section className="relative h-screen overflow-hidden bg-neutral-50 lg:h-auto">
-        <div className="absolute inset-0 bg-[url('/images/hero-bg-mobile.png')] bg-cover bg-[right_bottom] bg-no-repeat lg:bg-[url('/images/hero-bg.png')] lg:bg-[center_top]" />
-        {heroMobileGifSrc && (
-          <img
-            src={heroMobileGifSrc}
-            alt=""
-            aria-hidden="true"
-            loading="eager"
-            decoding="async"
-            onLoad={() => setHeroMobileGifLoaded(true)}
-            className={`absolute inset-0 block h-full w-full object-cover object-bottom-right transition-opacity duration-700 ease-out lg:hidden ${
-              heroMobileGifLoaded ? "opacity-100" : "opacity-0"
+        <div className="absolute inset-0 bg-[url('/images/hero-bg-mobile.png')] bg-cover bg-[center_bottom] bg-no-repeat lg:bg-[url('/images/hero-bg.png')] lg:bg-[center_top]" />
+        {heroMobileVideoSrc && (
+          <HeroVideo
+            src={heroMobileVideoSrc}
+            onReady={() => setHeroMobileVideoLoaded(true)}
+            className={`block object-bottom lg:hidden ${
+              heroMobileVideoLoaded ? "opacity-100" : "opacity-0"
             }`}
           />
         )}
-        {heroGifSrc && (
-          <img
-            src={heroGifSrc}
-            alt=""
-            aria-hidden="true"
-            loading="eager"
-            decoding="async"
-            onLoad={() => setHeroGifLoaded(true)}
-            className={`absolute inset-0 hidden h-full w-full object-cover object-top transition-opacity duration-700 ease-out lg:block ${
-              heroGifLoaded ? "opacity-100" : "opacity-0"
+        {heroVideoSrc && (
+          <HeroVideo
+            src={heroVideoSrc}
+            onReady={() => setHeroVideoLoaded(true)}
+            className={`hidden object-top lg:block ${
+              heroVideoLoaded ? "opacity-100" : "opacity-0"
             }`}
           />
         )}
