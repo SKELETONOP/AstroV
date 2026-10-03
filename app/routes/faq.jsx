@@ -6,7 +6,7 @@ import { buildMeta } from '../lib/meta';
 export const meta = ({ location }) =>
   buildMeta({
     title: 'Frequently Asked Questions',
-    description: 'Answers to common questions about astrology consultations, remedies, privacy and availability at Astro Vikesh Kumar.',
+    description: 'Answers to common questions about astrology consultations, remedies, privacy and availability at Mahakali Jyotish.',
     pathname: location.pathname,
   });
 

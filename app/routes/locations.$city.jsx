@@ -17,7 +17,7 @@ export const meta = ({ location, params }) => {
   }
   return buildMeta({
     title: `Astrologer in ${city.name} — Online & Phone Consultations`,
-    description: `Book an astrology, vashikaran or love problem solution consultation with Astro Vikesh Kumar for clients in ${city.name}, ${city.country}, available online and by phone.`,
+    description: `Book an astrology, vashikaran or love problem solution consultation with Pandit Vikesh Kumar of Mahakali Jyotish for clients in ${city.name}, ${city.country}, available online and by phone.`,
     pathname: location.pathname,
   });
 };

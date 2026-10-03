@@ -12,9 +12,9 @@ import { allServices } from "../lib/services";
 
 export const meta = ({ location }) =>
   buildMeta({
-    title: "Astro Vikesh Kumar — Astrology & Spiritual Consultation in Delhi",
+    title: "Mahakali Jyotish by Pandit Vikesh Kumar — Vedic Astrologer in Delhi",
     description:
-      "Trusted astrology, vashikaran, black magic removal and love problem consultations from Pandit Vikesh Kumar. 20+ years of experience, available worldwide.",
+      "Mahakali Jyotish by Pandit Vikesh Kumar — trusted astrology, vashikaran, black magic removal and love problem consultations in Delhi. 20+ years of experience, available worldwide.",
     pathname: location.pathname,
   });
 
@@ -215,7 +215,8 @@ export default function Home() {
             </h1>
 
             <p className="mt-4 max-w-xl text-base leading-7 text-neutral-600 sm:mt-5 sm:text-lg">
-              Astro Vikesh Kumar offers honest, practical astrology and
+              Mahakali Jyotish, led by Pandit Vikesh Kumar, offers honest,
+              practical astrology and
               spiritual guidance on love, marriage, family and career —
               available in person in Delhi or online, worldwide.
             </p>

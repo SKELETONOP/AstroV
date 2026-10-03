@@ -62,7 +62,12 @@ export default function Header() {
         <div className="container-page flex h-16 items-center justify-between gap-4 lg:h-20">
           <AppLink href="/" className="flex items-center gap-2 font-display text-lg font-bold text-neutral-900 lg:text-xl">
             <LogoMark size={40} className="h-9 w-9 lg:h-10 lg:w-10" />
-            <span className="leading-tight">Astro Vikesh Kumar</span>
+            <span className="flex flex-col leading-tight">
+              <span>Mahakali Jyotish</span>
+              <span className="font-sans text-[11px] font-medium tracking-wide text-accent-600 lg:text-xs">
+                by Pandit Vikesh Kumar
+              </span>
+            </span>
           </AppLink>
 
           <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">

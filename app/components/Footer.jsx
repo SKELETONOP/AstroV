@@ -44,8 +44,9 @@ export default function Footer() {
           <div className="mx-auto max-w-xs lg:mx-0 lg:max-w-none">
             <Icon name="Flower2" size={28} className="mx-auto text-accent-600 lg:mx-0" />
             <p className="mt-2 font-display text-2xl font-bold text-neutral-900">
-              Astro <span className="text-accent-600">Vikesh Kumar</span>
+              Mahakali <span className="text-accent-600">Jyotish</span>
             </p>
+            <p className="mt-1 font-display text-base italic text-neutral-700">by Pandit Vikesh Kumar</p>
             <p className="mt-1 text-xs font-semibold uppercase tracking-[0.25em] text-accent-600">
               Guidance &middot; Clarity &middot; Balance
             </p>

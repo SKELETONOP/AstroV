@@ -5,7 +5,7 @@ import { buildMeta } from '../lib/meta';
 export const meta = ({ location }) =>
   buildMeta({
     title: 'Privacy Policy',
-    description: 'How Astro Vikesh Kumar collects, uses and protects personal information shared through this website.',
+    description: 'How Mahakali Jyotish collects, uses and protects personal information shared through this website.',
     pathname: location.pathname,
   });
 

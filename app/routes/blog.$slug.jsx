@@ -38,7 +38,7 @@ export default function BlogPost() {
     );
   }
 
-  const { title, pubDate, imageAlt, author = 'Astro Vikesh Kumar' } = post.data;
+  const { title, pubDate, imageAlt, author = 'Pandit Vikesh Kumar' } = post.data;
   const image = (slug && postImage[slug]) ?? post.data.image;
   const parsedDate = new Date(pubDate);
 

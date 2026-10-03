@@ -1,4 +1,4 @@
-# Astro Vikesh Kumar
+# Mahakali Jyotish by Pandit Vikesh Kumar
 
 A Vite + React Router (framework mode, static-generated) site.
 

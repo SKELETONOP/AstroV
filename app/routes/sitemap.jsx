@@ -8,7 +8,7 @@ import { allServices } from '../lib/services';
 export const meta = ({ location }) =>
   buildMeta({
     title: 'Sitemap',
-    description: 'A full overview of every page on the Astro Vikesh Kumar website, including services, locations and blog articles.',
+    description: 'A full overview of every page on the Mahakali Jyotish website, including services, locations and blog articles.',
     pathname: location.pathname,
   });
 
