@@ -9,7 +9,7 @@ export const meta = ({ location }) =>
   buildMeta({
     title: 'Contact Us',
     description:
-      'Get in touch with Astro Vikesh Kumar for astrology, vashikaran, love problem and spiritual consultations. Available by phone, WhatsApp, email and online form.',
+      'Get in touch with Mahakali Jyotish (Pandit Vikesh Kumar) for astrology, vashikaran, love problem and spiritual consultations. Available by phone, WhatsApp, email and online form.',
     pathname: location.pathname,
   });
 

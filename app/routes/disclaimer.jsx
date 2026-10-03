@@ -5,7 +5,7 @@ import { buildMeta } from '../lib/meta';
 export const meta = ({ location }) =>
   buildMeta({
     title: 'Disclaimer',
-    description: 'Disclaimer covering the nature of astrology and spiritual consultation services offered by Astro Vikesh Kumar.',
+    description: 'Disclaimer covering the nature of astrology and spiritual consultation services offered by Mahakali Jyotish.',
     pathname: location.pathname,
   });
 
