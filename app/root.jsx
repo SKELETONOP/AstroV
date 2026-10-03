@@ -1,5 +1,6 @@
 import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration, useRouteError } from 'react-router';
 import Footer from './components/Footer';
+import GoogleAnalytics from './components/GoogleAnalytics';
 import Header from './components/Header';
 import PageLoader from './components/PageLoader';
 import StickyMobileCTA from './components/StickyMobileCTA';
@@ -24,6 +25,7 @@ export function Layout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <Meta />
         <Links />
+        <GoogleAnalytics />
       </head>
       <body className="flex min-h-screen flex-col" suppressHydrationWarning>
         <PageLoader />
