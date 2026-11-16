@@ -4,7 +4,7 @@ import Button from '../components/Button';
 import Icon from '../components/Icon';
 import site from '../data/site.json';
 import { getServicePage } from '../lib/content';
-import { buildMeta } from '../lib/meta';
+import { absoluteUrl, breadcrumbSchema, buildMeta, schemaRefs } from '../lib/meta';
 import { allServices } from '../lib/services';
 
 export const meta = ({ location, params }) => {
@@ -12,11 +12,27 @@ export const meta = ({ location, params }) => {
   if (!service) {
     return buildMeta({ title: 'Service Not Found', description: 'This service could not be found.', pathname: location.pathname });
   }
+  const { title, seoTitle = title, description, seoDescription = description } = service.data;
   return buildMeta({
-    title: service.data.title,
-    description: service.data.description,
+    title: seoTitle,
+    description: seoDescription,
     pathname: location.pathname,
     image: service.data.image,
+    schema: [
+      {
+        '@type': 'Service',
+        name: title,
+        serviceType: title,
+        description: seoDescription,
+        url: absoluteUrl(location.pathname),
+        provider: schemaRefs.business,
+        areaServed: 'Worldwide',
+      },
+      breadcrumbSchema([
+        { name: 'Home', path: '/' },
+        { name: title, path: location.pathname },
+      ]),
+    ],
   });
 };
 
@@ -61,6 +77,7 @@ export default function ServiceDetail() {
 
   const {
     title,
+    seoTitle = title,
     description,
     category,
     image,
@@ -93,7 +110,7 @@ export default function ServiceDetail() {
             <Icon name="Sparkle" size={14} />
             {category}
           </p>
-          <h1 className="mt-3 font-display text-3xl font-extrabold text-neutral-900 sm:text-4xl">{title}</h1>
+          <h1 className="mt-3 font-display text-3xl font-extrabold text-neutral-900 sm:text-4xl">{seoTitle}</h1>
           <p className="mt-4 max-w-2xl text-lg leading-7 text-neutral-600">{description}</p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button href="/contact" variant="primary" size="md">

@@ -1,7 +1,9 @@
 ---
 title: "Astrology Consultation"
+seoTitle: "Online Astrology Consultation in India"
 category: "Astro"
 description: "Detailed birth chart analysis and personalised guidance on career, health, marriage and life direction from Pandit Vikesh Kumar."
+seoDescription: "Online astrology consultation with Pandit Vikesh Kumar for clients across India and worldwide. Birth chart analysis for career, marriage and health by phone, WhatsApp or video."
 image: "/images/services/astrology-consultation.svg"
 imageAlt: "Pandit Vikesh Kumar seated at his desk with a birth chart, under a starry night sky"
 order: 1

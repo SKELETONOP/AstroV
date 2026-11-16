@@ -1,7 +1,9 @@
 ---
 title: "Vashikaran Specialist"
+seoTitle: "Online Vashikaran Specialist in India"
 category: "Vashikaran"
 description: "Ethical, traditional vashikaran remedies from an experienced specialist to help resolve relationship and life obstacles."
+seoDescription: "Consult an experienced vashikaran specialist online from anywhere in India or abroad. Ethical, traditional remedies for relationship and life obstacles by phone or WhatsApp."
 image: "/images/services/vashikaran-specialist.svg"
 imageAlt: "Pandit Vikesh Kumar seated at his desk in a study dedicated to vashikaran and relationship guidance"
 order: 2

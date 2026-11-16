@@ -1,7 +1,9 @@
 ---
 title: "Inter-Caste Love Marriage"
+seoTitle: "Online Inter-Caste Marriage Astrologer"
 category: "Love"
 description: "Support in easing family resistance and building consensus around an inter-caste or inter-religion love marriage."
+seoDescription: "Online guidance for inter-caste and inter-religion love marriage, for couples anywhere in India or abroad. Ease family resistance with remedies shared by phone or WhatsApp."
 image: "/images/services/inter-caste-love-marriage.svg"
 imageAlt: "Pandit Vikesh Kumar seated at his desk, offering guidance for inter-caste love marriage and family approval"
 order: 5

@@ -1,7 +1,9 @@
 ---
 title: "Black Magic Removal"
+seoTitle: "Online Black Magic Removal in India"
 category: "Black Magic"
 description: "Identify and remove negative energy affecting health, finances or relationships with protective, traditional remedies."
+seoDescription: "Online black magic and negative energy removal for clients across India and worldwide. Identify the cause and get protective remedies by phone, WhatsApp or video call."
 image: "/images/services/black-magic-removal.svg"
 imageAlt: "Pandit Vikesh Kumar seated at his desk in a study dedicated to black magic removal and spiritual protection"
 order: 3
