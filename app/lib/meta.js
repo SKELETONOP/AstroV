@@ -3,7 +3,7 @@ import site from '../data/site.json';
 export const SITE_URL = 'https://www.mahakalijyotish.com';
 const SITE_NAME = 'Mahakali Jyotish';
 const DEFAULT_IMAGE = '/images/og-image.jpg';
-const DEFAULT_IMAGE_ALT = 'Mahakali Jyotish by Pandit Vikesh Kumar — Vedic astrologer in New Delhi';
+const DEFAULT_IMAGE_ALT = 'Mahakali Jyotish by Pandit Vikesh Kumar — online Vedic astrologer for clients across India and worldwide';
 
 export const absoluteUrl = (path) => new URL(path, SITE_URL).toString();
 
@@ -20,7 +20,7 @@ const siteGraph = [
     name: SITE_NAME,
     alternateName: 'Mahakali Jyotish by Pandit Vikesh Kumar',
     description:
-      'Vedic astrology, vashikaran, black magic removal, love problem solution and spiritual healing consultations in Karol Bagh, New Delhi and online worldwide.',
+      'Online Vedic astrology, vashikaran, black magic removal, love problem solution and spiritual healing consultations by phone, WhatsApp and video call for clients across India and worldwide, with an office in Karol Bagh, New Delhi.',
     url: SITE_URL,
     image: absoluteUrl(DEFAULT_IMAGE),
     logo: absoluteUrl('/favicon.svg'),
@@ -36,11 +36,7 @@ const siteGraph = [
       postalCode: '110005',
       addressCountry: 'IN',
     },
-    areaServed: [
-      { '@type': 'City', name: 'New Delhi' },
-      { '@type': 'Country', name: 'India' },
-      'Worldwide',
-    ],
+    areaServed: [{ '@type': 'Country', name: 'India' }, 'Worldwide'],
     openingHoursSpecification: {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
@@ -53,7 +49,7 @@ const siteGraph = [
     '@type': 'Person',
     '@id': PERSON_ID,
     name: 'Pandit Vikesh Kumar',
-    jobTitle: 'Vedic Astrologer',
+    jobTitle: 'Online Vedic Astrologer',
     worksFor: { '@id': BUSINESS_ID },
     url: absoluteUrl('/about'),
     image: absoluteUrl('/images/about-portrait.png'),

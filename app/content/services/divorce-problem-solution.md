@@ -1,8 +1,9 @@
 ---
 title: "Divorce Problem Solution"
-seoTitle: "Divorce Problem Solution Astrologer"
+seoTitle: "Online Divorce Problem Solution Astrologer"
 category: "Family"
 description: "Remedies and guidance aimed at restoring understanding between partners and avoiding an unnecessary separation."
+seoDescription: "Online divorce problem solution for couples across India and worldwide. Astrological guidance and remedies to restore understanding and avoid separation, by phone or video."
 image: "/images/services/divorce-problem-solution.svg"
 imageAlt: "Pandit Vikesh Kumar seated at his desk, offering guidance for divorce and relationship separation problems"
 order: 6

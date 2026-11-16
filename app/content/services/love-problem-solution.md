@@ -1,8 +1,9 @@
 ---
 title: "Love Problem Solution"
-seoTitle: "Love Problem Solution Astrologer in Delhi"
+seoTitle: "Online Love Problem Solution Astrologer"
 category: "Love"
 description: "Practical, respectful guidance to resolve misunderstandings, rebuild trust and strengthen a loving relationship."
+seoDescription: "Online love problem solution from Pandit Vikesh Kumar for couples across India and abroad. Resolve misunderstandings and rebuild trust through phone, WhatsApp or video consultations."
 image: "/images/services/love-problem-solution.svg"
 imageAlt: "Pandit Vikesh Kumar seated in a lounge overlooking the city skyline at sunset, offering love and relationship guidance"
 order: 4

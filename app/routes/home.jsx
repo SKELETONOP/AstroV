@@ -12,9 +12,9 @@ import { allServices } from "../lib/services";
 
 export const meta = ({ location }) =>
   buildMeta({
-    title: "Mahakali Jyotish by Pandit Vikesh Kumar — Vedic Astrologer in Delhi",
+    title: "Online Vedic Astrologer in India | Mahakali Jyotish",
     description:
-      "Mahakali Jyotish by Pandit Vikesh Kumar — trusted astrology, vashikaran, black magic removal and love problem consultations in Delhi. 20+ years of experience, available worldwide.",
+      "Consult Pandit Vikesh Kumar of Mahakali Jyotish online for astrology, vashikaran, black magic removal and love problem solutions by phone, WhatsApp or video, across India and worldwide. 20+ years of experience.",
     pathname: location.pathname,
   });
 
@@ -209,7 +209,7 @@ export default function Home() {
 
             <h1 className="mt-4 font-display text-2xl font-extrabold leading-tight text-neutral-900 sm:mt-6 sm:text-5xl lg:text-6xl">
               <span className="mb-2 block font-sans text-sm font-semibold uppercase tracking-wider text-accent-700 sm:mb-3 sm:text-base">
-                Vedic Astrologer in Delhi — Pandit Vikesh Kumar
+                Online Vedic Astrologer — Pandit Vikesh Kumar
               </span>
               Clarity for life&apos;s hardest questions,{" "}
               <span className="text-accent-600">
@@ -221,7 +221,8 @@ export default function Home() {
               Mahakali Jyotish, led by Pandit Vikesh Kumar, offers honest,
               practical astrology and
               spiritual guidance on love, marriage, family and career —
-              available in person in Delhi or online, worldwide.
+              available online across India and worldwide, with in-person
+              sessions in New Delhi.
             </p>
 
             <div className="mt-6 flex flex-row gap-2 sm:mt-8 sm:gap-3">
@@ -304,7 +305,8 @@ export default function Home() {
               <p className="mt-4 text-base leading-7 text-neutral-600">
                 Whether you need a single, focused answer or an ongoing
                 relationship with a trusted advisor, sessions are available over
-                phone, WhatsApp, video call or in person at the Delhi office.
+                phone, WhatsApp or video call from anywhere in India or abroad,
+                or in person at the Delhi office.
               </p>
 
               <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4 sm:divide-x sm:divide-neutral-900/10">
@@ -433,8 +435,8 @@ export default function Home() {
               What Clients Say
             </h2>
             <p className="mt-4 text-neutral-600">
-              Real feedback from consultations held in Delhi and worldwide over
-              video and phone.
+              Real feedback from online consultations with clients across India
+              and worldwide.
             </p>
           </div>
           <Carousel

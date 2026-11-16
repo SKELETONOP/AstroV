@@ -12,10 +12,10 @@ export const meta = ({ location, params }) => {
   if (!service) {
     return buildMeta({ title: 'Service Not Found', description: 'This service could not be found.', pathname: location.pathname });
   }
-  const { title, seoTitle = title, description } = service.data;
+  const { title, seoTitle = title, description, seoDescription = description } = service.data;
   return buildMeta({
     title: seoTitle,
-    description,
+    description: seoDescription,
     pathname: location.pathname,
     image: service.data.image,
     schema: [
@@ -23,7 +23,7 @@ export const meta = ({ location, params }) => {
         '@type': 'Service',
         name: title,
         serviceType: title,
-        description,
+        description: seoDescription,
         url: absoluteUrl(location.pathname),
         provider: schemaRefs.business,
         areaServed: 'Worldwide',

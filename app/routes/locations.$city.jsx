@@ -16,8 +16,8 @@ export const meta = ({ location, params }) => {
     return buildMeta({ title: 'Location Not Found', description: 'This location could not be found.', pathname: location.pathname });
   }
   return buildMeta({
-    title: `Astrologer in ${city.name} — Online & Phone Consultations`,
-    description: `Book an astrology, vashikaran or love problem solution consultation with Pandit Vikesh Kumar of Mahakali Jyotish for clients in ${city.name}, ${city.country}, available online and by phone.`,
+    title: `Online Astrologer in ${city.name} — Phone & Video Consultations`,
+    description: `Book an online astrology, vashikaran or love problem solution consultation with Pandit Vikesh Kumar of Mahakali Jyotish from ${city.name}, ${city.country}, by phone, WhatsApp or video call.`,
     pathname: location.pathname,
     schema: [
       breadcrumbSchema([
@@ -63,7 +63,7 @@ export default function LocationCity() {
             Serving {city.country}
           </p>
           <h1 className="mt-3 font-display text-3xl font-extrabold text-neutral-900 sm:text-4xl">
-            Astrologer &amp; Spiritual Consultant for Clients in {city.name}
+            Online Astrologer &amp; Spiritual Consultant for Clients in {city.name}
           </h1>
           <p className="mt-4 max-w-2xl text-lg leading-7 text-neutral-600">
             Pandit Vikesh Kumar provides astrology, vashikaran, black magic removal and love problem consultations to

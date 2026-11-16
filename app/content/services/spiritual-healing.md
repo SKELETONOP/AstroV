@@ -1,8 +1,9 @@
 ---
 title: "Spiritual Healing"
-seoTitle: "Spiritual Healing in Delhi & Online"
+seoTitle: "Online Spiritual Healing in India"
 category: "Healing"
 description: "Energy-balancing remedies to relieve stress, anxiety and a sense of being stuck, restoring calm and momentum."
+seoDescription: "Online spiritual healing for clients across India and worldwide. Energy-balancing remedies for stress, anxiety and feeling stuck, guided by phone, WhatsApp or video call."
 image: "/images/services/spiritual-healing.svg"
 imageAlt: "Pandit Vikesh Kumar seated at his desk in a study dedicated to spiritual healing and inner balance"
 order: 7

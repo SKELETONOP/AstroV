@@ -6,9 +6,9 @@ import { buildMeta } from '../lib/meta';
 
 export const meta = ({ location }) =>
   buildMeta({
-    title: 'About Pandit Vikesh Kumar – Astrologer in Delhi',
+    title: 'About Pandit Vikesh Kumar, Online Astrologer',
     description:
-      "Learn about Pandit Vikesh Kumar's background, approach and 20+ years of experience in astrology and spiritual consultation.",
+      "Meet Pandit Vikesh Kumar, an online Vedic astrologer with 20+ years of experience guiding clients across India and worldwide by phone, WhatsApp and video call.",
     pathname: location.pathname,
   });
 
