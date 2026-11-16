@@ -1,5 +1,6 @@
 ---
 title: "Inter-Caste Love Marriage"
+seoTitle: "Inter-Caste Love Marriage Astrologer"
 category: "Love"
 description: "Support in easing family resistance and building consensus around an inter-caste or inter-religion love marriage."
 image: "/images/services/inter-caste-love-marriage.svg"

@@ -1,5 +1,6 @@
 ---
 title: "Astrology Consultation"
+seoTitle: "Astrology Consultation in Delhi & Online"
 category: "Astro"
 description: "Detailed birth chart analysis and personalised guidance on career, health, marriage and life direction from Pandit Vikesh Kumar."
 image: "/images/services/astrology-consultation.svg"

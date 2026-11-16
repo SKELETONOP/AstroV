@@ -1,5 +1,6 @@
 ---
 title: "Vashikaran Specialist"
+seoTitle: "Vashikaran Specialist Pandit in Delhi"
 category: "Vashikaran"
 description: "Ethical, traditional vashikaran remedies from an experienced specialist to help resolve relationship and life obstacles."
 image: "/images/services/vashikaran-specialist.svg"

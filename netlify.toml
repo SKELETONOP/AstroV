@@ -5,6 +5,19 @@
 [build.environment]
   NODE_VERSION = "22"
 
+# Renamed location slugs (spelling fixes) — keep old URLs' ranking via permanent redirects.
+[[redirects]]
+  from = "/locations/karol-bag"
+  to = "/locations/karol-bagh"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/locations/gujrat"
+  to = "/locations/gujarat"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/*"
   to = "/index.html"

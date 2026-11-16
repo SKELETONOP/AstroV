@@ -208,6 +208,9 @@ export default function Home() {
             </p>
 
             <h1 className="mt-4 font-display text-2xl font-extrabold leading-tight text-neutral-900 sm:mt-6 sm:text-5xl lg:text-6xl">
+              <span className="mb-2 block font-sans text-sm font-semibold uppercase tracking-wider text-accent-700 sm:mb-3 sm:text-base">
+                Vedic Astrologer in Delhi — Pandit Vikesh Kumar
+              </span>
               Clarity for life&apos;s hardest questions,{" "}
               <span className="text-accent-600">
                 grounded in your own chart.

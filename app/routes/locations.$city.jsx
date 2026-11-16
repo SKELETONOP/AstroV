@@ -4,7 +4,7 @@ import Button from '../components/Button';
 import Icon from '../components/Icon';
 import cities from '../data/cities.json';
 import site from '../data/site.json';
-import { buildMeta } from '../lib/meta';
+import { breadcrumbSchema, buildMeta } from '../lib/meta';
 
 function findCity(slug) {
   return cities.find((c) => c.slug === slug);
@@ -19,6 +19,12 @@ export const meta = ({ location, params }) => {
     title: `Astrologer in ${city.name} — Online & Phone Consultations`,
     description: `Book an astrology, vashikaran or love problem solution consultation with Pandit Vikesh Kumar of Mahakali Jyotish for clients in ${city.name}, ${city.country}, available online and by phone.`,
     pathname: location.pathname,
+    schema: [
+      breadcrumbSchema([
+        { name: 'Home', path: '/' },
+        { name: city.name, path: location.pathname },
+      ]),
+    ],
   });
 };
 

@@ -1,13 +1,14 @@
 import Button from '../components/Button';
 import FaqAccordion from '../components/FaqAccordion';
 import Icon from '../components/Icon';
-import { buildMeta } from '../lib/meta';
+import { buildMeta, faqSchema } from '../lib/meta';
 
 export const meta = ({ location }) =>
   buildMeta({
     title: 'Frequently Asked Questions',
     description: 'Answers to common questions about astrology consultations, remedies, privacy and availability at Mahakali Jyotish.',
     pathname: location.pathname,
+    schema: [faqSchema(faqGroups.flatMap((group) => group.items))],
   });
 
 const faqGroups = [

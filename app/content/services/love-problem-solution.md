@@ -1,5 +1,6 @@
 ---
 title: "Love Problem Solution"
+seoTitle: "Love Problem Solution Astrologer in Delhi"
 category: "Love"
 description: "Practical, respectful guidance to resolve misunderstandings, rebuild trust and strengthen a loving relationship."
 image: "/images/services/love-problem-solution.svg"

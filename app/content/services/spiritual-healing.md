@@ -1,5 +1,6 @@
 ---
 title: "Spiritual Healing"
+seoTitle: "Spiritual Healing in Delhi & Online"
 category: "Healing"
 description: "Energy-balancing remedies to relieve stress, anxiety and a sense of being stuck, restoring calm and momentum."
 image: "/images/services/spiritual-healing.svg"

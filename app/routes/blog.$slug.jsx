@@ -3,7 +3,7 @@ import Button from '../components/Button';
 import AppLink from '../components/AppLink';
 import Icon from '../components/Icon';
 import { getBlogPost } from '../lib/content';
-import { buildMeta } from '../lib/meta';
+import { absoluteUrl, breadcrumbSchema, buildMeta, schemaRefs } from '../lib/meta';
 
 const postImage = {
   'understanding-saturn-return': '/images/blog-saturn-return.png',
@@ -13,11 +13,35 @@ const postImage = {
 export const meta = ({ location, params }) => {
   const post = params.slug ? getBlogPost(params.slug) : undefined;
   if (!post) return buildMeta({ title: 'Article Not Found', description: 'This article could not be found.', pathname: location.pathname });
+  const { title, description, pubDate } = post.data;
+  const image = postImage[params.slug] ?? post.data.image;
+  const published = new Date(pubDate).toISOString();
   return buildMeta({
-    title: post.data.title,
-    description: post.data.description,
+    title,
+    description,
     pathname: location.pathname,
-    image: postImage[params.slug] ?? post.data.image,
+    image,
+    type: 'article',
+    publishedTime: published,
+    schema: [
+      {
+        '@type': 'BlogPosting',
+        headline: title,
+        description,
+        image: absoluteUrl(image),
+        datePublished: published,
+        dateModified: published,
+        mainEntityOfPage: absoluteUrl(location.pathname),
+        author: schemaRefs.person,
+        publisher: schemaRefs.business,
+        inLanguage: 'en-IN',
+      },
+      breadcrumbSchema([
+        { name: 'Home', path: '/' },
+        { name: 'Blog', path: '/blog' },
+        { name: title, path: location.pathname },
+      ]),
+    ],
   });
 };
 

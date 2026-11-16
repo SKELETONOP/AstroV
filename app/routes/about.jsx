@@ -6,7 +6,7 @@ import { buildMeta } from '../lib/meta';
 
 export const meta = ({ location }) =>
   buildMeta({
-    title: 'About Vikesh Kumar',
+    title: 'About Pandit Vikesh Kumar – Astrologer in Delhi',
     description:
       "Learn about Pandit Vikesh Kumar's background, approach and 20+ years of experience in astrology and spiritual consultation.",
     pathname: location.pathname,

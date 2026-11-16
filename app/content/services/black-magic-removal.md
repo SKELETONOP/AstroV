@@ -1,5 +1,6 @@
 ---
 title: "Black Magic Removal"
+seoTitle: "Black Magic Removal Specialist in Delhi"
 category: "Black Magic"
 description: "Identify and remove negative energy affecting health, finances or relationships with protective, traditional remedies."
 image: "/images/services/black-magic-removal.svg"

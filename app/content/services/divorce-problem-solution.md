@@ -1,5 +1,6 @@
 ---
 title: "Divorce Problem Solution"
+seoTitle: "Divorce Problem Solution Astrologer"
 category: "Family"
 description: "Remedies and guidance aimed at restoring understanding between partners and avoiding an unnecessary separation."
 image: "/images/services/divorce-problem-solution.svg"
